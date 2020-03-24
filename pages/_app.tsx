@@ -1,5 +1,13 @@
-import App from "next/app";
+import React from "react";
 
-import "../styles/styles.scss";
+import "../styles/global.scss";
+import TheNavBar from "../components/organisms/TheNavBar";
+
+const App = ({ Component, pageProps }) => (
+    <>
+        <TheNavBar />
+        <Component {...pageProps} />
+    </>
+);
 
 export default App;
