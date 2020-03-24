@@ -1,18 +1,19 @@
 import React from "react";
-import { useRouter } from 'next/router';
+import Router, {useRouter} from 'next/router';
+
 import SearchBar from "../molecules/SearchBar";
+import { SEARCH_ROUTE } from "../../config/routes";
 
 const TheNavBar = () => {
     const router = useRouter();
 
     // TODO Move to a more general location, to eventually share it with other search bars
-    const searchProduct = (searchedValue) => {
-        console.log("Not implemented");
-        console.log(searchedValue);
-    }
+    const searchProduct = async (searchedValue: string) => {
+        await Router.push(`${SEARCH_ROUTE}?q=${searchedValue}`);
+    };
 
     return (
-        <nav className="bg-primary d-flex justify-content-between text-white">
+        <nav className="bg-primary d-flex justify-content-between text-white position-sticky">
             <div className="px-4 py-2">
                 {router.pathname}
             </div>
