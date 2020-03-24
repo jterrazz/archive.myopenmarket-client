@@ -5,6 +5,7 @@ import SearchBar from "../molecules/SearchBar";
 const TheNavBar = () => {
     const router = useRouter();
 
+    // TODO Move to a more general location, to eventually share it with other search bars
     const searchProduct = (searchedValue) => {
         console.log("Not implemented");
         console.log(searchedValue);
