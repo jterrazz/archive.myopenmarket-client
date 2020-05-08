@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -17,6 +18,10 @@ const SearchPage = ({ products }) => {
     } = useRouter();
 
     return <Search query={Array.isArray(query) ? query[0] : query} products={products} />;
+};
+
+SearchPage.propTypes = {
+    products: PropTypes.array,
 };
 
 export default SearchPage;

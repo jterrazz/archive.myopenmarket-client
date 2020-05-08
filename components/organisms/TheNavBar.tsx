@@ -8,14 +8,14 @@ const TheNavBar = () => {
     const router = useRouter();
 
     // TODO Move to a more general location, to eventually share it with other search bars
-    const searchProduct = async (searchedValue: string) => {
+    const _handleSearchProduct = async (searchedValue: string) => {
         await Router.push(`${SEARCH_ROUTE}?q=${searchedValue}`);
     };
 
     return (
         <nav className="bg-primary d-flex justify-content-between text-white position-sticky">
             <div className="px-4 py-2">{router.pathname}</div>
-            <SearchBar handleSearch={searchProduct} />
+            <SearchBar handleSearch={_handleSearchProduct} />
             <button>Login</button>
             <button>Register</button>
         </nav>

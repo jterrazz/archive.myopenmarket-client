@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../styles/global.scss';
 import TheNavBar from '../components/organisms/TheNavBar';
+import PropTypes from 'prop-types';
 
 const App = ({ Component, pageProps }) => (
     <>
@@ -14,5 +15,10 @@ const App = ({ Component, pageProps }) => (
         <Component {...pageProps} />
     </>
 );
+
+App.propTypes = {
+    Component: PropTypes.func,
+    pageProps: PropTypes.array,
+};
 
 export default App;

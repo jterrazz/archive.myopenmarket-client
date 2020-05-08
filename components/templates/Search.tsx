@@ -6,7 +6,7 @@ const Search = ({ query, products }) => (
         <h1>Results for {query}</h1>
         <ul>
             {products.map((product) => (
-                <li>{product}</li>
+                <li key={product}>{product}</li>
             ))}
         </ul>
     </div>
