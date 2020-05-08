@@ -19,10 +19,10 @@ const SearchBar = ({ handleSearch }) => {
         <>
             <input
                 value={searchedValue}
-                placeholder="hello"
+                placeholder='hello'
                 onChange={(e) => setSearchedValue(e.target.value)}
                 onKeyDown={_handleKeyDown}
-                className="flex-fill bg-transparent border-0 text-white mt-5"
+                className='flex-fill bg-transparent border-0 text-white mt-5'
             />
             <button onClick={() => _handleSearch(searchedValue)}>Find me the best !</button>
         </>

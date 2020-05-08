@@ -7,7 +7,7 @@ const HomePage = () => (
     <div>
         <Head>
             <title>Home - myshop.eth</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel='icon' href='/favicon.ico' />
         </Head>
 
         <Home />

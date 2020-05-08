@@ -13,8 +13,8 @@ const TheNavBar = () => {
     };
 
     return (
-        <nav className="bg-primary d-flex justify-content-between text-white position-sticky">
-            <div className="px-4 py-2">{router.pathname}</div>
+        <nav className='bg-primary d-flex justify-content-between text-white position-sticky'>
+            <div className='px-4 py-2'>{router.pathname}</div>
             <SearchBar handleSearch={_handleSearchProduct} />
             <button>Login</button>
             <button>Register</button>
