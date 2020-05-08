@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const TheFooter = () => (
     <footer>
@@ -10,6 +10,6 @@ const TheFooter = () => (
             Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
         </a>
     </footer>
-)
+);
 
-export default TheFooter
+export default TheFooter;
