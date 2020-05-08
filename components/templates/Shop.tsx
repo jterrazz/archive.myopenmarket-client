@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InformationHeader from '../organisms/PresentationBanner';
+import MSObject from '../../myshop/ms_object';
 
 const Shop = ({ shopInfos }) => {
-    const headerInfos = {
-        title: 'ok',
-        description: 'yo',
-        photoUrl: 'yo',
-        city: 'blyat',
-    };
+    const headerInfos = MSObject.mapKeys(shopInfos, { name: 'title' });
 
     return (
         <div className='container'>
