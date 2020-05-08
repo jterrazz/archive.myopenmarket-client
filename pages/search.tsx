@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useRouter } from 'next/router';
+import { GetServerSideProps } from 'next';
 
 import Search from '../components/templates/Search';
 
-export async function getStaticProps(ctx) {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return {
         props: {
             products: [1, 4, 2],
         },
     };
-}
+};
 
 const SearchPage = ({ products }) => {
     const {
