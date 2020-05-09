@@ -20,7 +20,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
             { name: 'tag2', count: 23 },
         ],
     };
-    const selectedTagIndex = shopInfos.productTags.findIndex((p) => p.name == ctx.query.tag) || 0;
+    let selectedTagIndex = shopInfos.productTags.findIndex((p) => p.name == ctx.query.tag);
+    if (selectedTagIndex === -1) selectedTagIndex = 0;
 
     return {
         props: {

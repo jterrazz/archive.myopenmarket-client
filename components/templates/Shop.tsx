@@ -19,7 +19,7 @@ const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
 
     const _onTagFocusChange = async (tag) => {
         getProducts(tag).then(setDisplayedProducts);
-        MSRouter.silentlyUpdateQuery({ tag: tag.name });
+        await MSRouter.silentlyUpdateQuery({ tag: tag.name });
     };
 
     return (
