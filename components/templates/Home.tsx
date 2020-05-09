@@ -1,11 +1,11 @@
 import React from 'react';
 
-import FeaturesPresentation from '../organisms/FeaturesPresentation';
+import MSFeatures from '../molecules/information/MSFeatures';
 
 const Home = () => (
     <main>
         <div className='my-5' />
-        <FeaturesPresentation />
+        <MSFeatures />
     </main>
 );
 

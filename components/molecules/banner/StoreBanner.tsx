@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from '../atoms/Image';
+import Image from '../../atoms/Image';
 
-const InformationHeader = ({ title, city, description, photoUrl }) => (
+const StoreBanner = ({ title, city, description, photoUrl }) => (
     <div className='d-flex'>
         <Image src={photoUrl} className='x-5em y-5em' rounded />
         <div>
@@ -13,11 +13,11 @@ const InformationHeader = ({ title, city, description, photoUrl }) => (
     </div>
 );
 
-InformationHeader.propTypes = {
+StoreBanner.propTypes = {
     title: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     photoUrl: PropTypes.string,
 };
 
-export default InformationHeader;
+export default StoreBanner;

@@ -9,7 +9,10 @@ const TheNavBar = () => {
 
     // TODO Move to a more general location, to eventually share it with other search bars
     const _handleSearchProduct = async (searchedValue: string) => {
-        await Router.push(`${SEARCH_ROUTE}?q=${searchedValue}`);
+        await Router.push({
+            pathname: SEARCH_ROUTE,
+            query: { q: searchedValue },
+        });
     };
 
     return (
