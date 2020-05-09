@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
 class MSObject {
+    /**
+     * Transform an object keys
+     */
     static mapKeys = (input: object, mapRules: object) => {
         const tab = {};
 

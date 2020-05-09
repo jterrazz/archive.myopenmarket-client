@@ -9,8 +9,13 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => ({
         shopInfos: {
             name: 'ok',
             description: 'efef',
-            photoUrl: 'def',
+            photoUrl: 'https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png',
             city: 'blyat',
+            productTags: [
+                { name: 'tag1', count: 23 },
+                { name: 'tag2', count: 23 },
+                { name: 'tag3', count: 23 },
+            ],
         },
     },
 });

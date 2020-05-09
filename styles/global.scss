@@ -1,3 +1,26 @@
 @import './_variables';
 @import '~bootstrap/scss/bootstrap';
 
+.bg-gray-clear {
+    background-color: $grey;
+}
+
+// Size
+
+.x-5em {
+    width: 5 * $base-size;
+}
+
+.x-5em {
+    height: 5 * $base-size;
+}
+
+// Tags
+
+.tag {
+    font-size: 0.8rem;
+    color: $grey;
+    background: $grey-clear;
+    padding: 3px 10px;
+    @extend .rounded-pill;
+}

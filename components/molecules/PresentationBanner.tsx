@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Image from '../atoms/Image';
 
 const InformationHeader = ({ title, city, description, photoUrl }) => (
     <div className='d-flex'>
-        <img src={photoUrl} />
+        <Image src={photoUrl} className='x-5em y-5em' rounded />
         <div>
             <h1>{title}</h1>
             <div>{city}</div>
