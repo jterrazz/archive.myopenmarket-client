@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import StoreBanner from '../organisms/banner/StoreBanner';
 import SectionTags from '../molecules/SectionTags';
-import MSObject from '../../myshop/ms_object';
 import ProductCellsGrid from '../organisms/grid/ProductCells';
-import MSRouter from '../../myshop/ms_router';
+import { TOMObject, TOMRouter } from '../../theopenmarket/index';
 
 const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
-    const bannerInfos = MSObject.mapKeys(shopInfos, { name: 'title' });
-    const tagSections = shopInfos.productTags.map((p) => MSObject.mapKeys(p, { count: 'counter' }));
+    const bannerInfos = TOMObject.mapKeys(shopInfos, { name: 'title' });
+    const tagSections = shopInfos.productTags.map((p) => TOMObject.mapKeys(p, { count: 'counter' }));
     const [displayedProducts, setDisplayedProducts] = useState([]);
 
     // TODO Use only for fetching when clicking another tag, else use default
@@ -19,7 +18,7 @@ const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
 
     const _onTagFocusChange = async (tag) => {
         getProducts(tag).then(setDisplayedProducts);
-        await MSRouter.silentlyUpdateQuery({ tag: tag.name });
+        await TOMRouter.silentlyUpdateQuery({ tag: tag.name });
     };
 
     return (

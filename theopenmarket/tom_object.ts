@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
-class MSObject {
+export default class MSObject {
     /**
-     * Transform an object keys
+     * @description Transform an object keys
      */
     static mapKeys = (input: object, mapRules: object) => {
         const tab = {};
@@ -15,5 +15,3 @@ class MSObject {
         return tab;
     };
 }
-
-export default MSObject;
