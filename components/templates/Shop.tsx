@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import StoreBanner from '../organisms/banner/StoreBanner';
 import SectionTags from '../molecules/SectionTags';
 import ProductCellsGrid from '../organisms/grid/ProductCells';
-import { TOMObject, TOMRouter } from '../../theopenmarket/index';
+import { TOMObject, TOMRouter } from '../../librairies/tom-classes/index';
 
 const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
     const bannerInfos = TOMObject.mapKeys(shopInfos, { name: 'title' });
