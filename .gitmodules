@@ -1,3 +1,3 @@
-[submodule "librairies/tom-classes"]
-	path = librairies/tom-classes
+[submodule "src/librairies/tom-classes"]
+	path = src/librairies/tom-classes
 	url = git@github.com:theopenmarket/tom-classes.git

@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@tom": ["librairies/tom-classes"]
+      "@tom": ["src/librairies/tom-classes"]
     },
   },
   "exclude": [
