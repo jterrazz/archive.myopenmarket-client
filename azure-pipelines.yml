@@ -1,12 +1,9 @@
+trigger:
+- master
+
 jobs:
 
 - job: Checks
-  trigger:
-  - master
-
-  pr:
-  - master
-  - releases/*
 
   pool:
     vmImage: 'ubuntu-latest'
