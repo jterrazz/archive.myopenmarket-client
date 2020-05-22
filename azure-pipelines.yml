@@ -1,22 +1,25 @@
-parameters:
-  - name: doThing
-    default: false # value passed to the condition
-    type: boolean
-
-resources:
-  pipelines:
-  - pipeline: theopenmarket.tom-web
-    source: theopenmarket.tom-web
-    trigger: 
-      branches:
-      - releases/*
+trigger: 
+  branches:
+    include:
       - master
 
 jobs:
-  - job: Deploy
+  - job: Checks
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '14.x'
+      displayName: 'Install Node.js'
+    - script: |
+        yarn
+        yarn build
+      displayName: 'Install and build packages'
+  - job: deployment
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     steps:
-    - script: echo I did a thing
+    - script: echo "To implement"
   
 
 # resources:
@@ -27,19 +30,7 @@ jobs:
 #       - releases/*
 #       - master
 #     jobs:
-#     - job: Checks
-#     pool:
-#     vmImage: 'ubuntu-latest'
-#     steps:
-#     - task: NodeTool@0
-#       inputs:
-#         versionSpec: '14.x'
-#       displayName: 'Install Node.js'
-
-#     - script: |
-#       yarn
-#       yarn build
-#     displayName: 'Install and build packages'
+#     
 # repositories:
 # - repository: myPHPApp      
 #   type: GitHub
