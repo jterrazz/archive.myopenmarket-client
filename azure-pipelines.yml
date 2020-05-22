@@ -2,6 +2,10 @@ trigger:
   branches:
     include:
       - master
+pr:
+  branches:
+    include:
+      - master
 
 jobs:
 
