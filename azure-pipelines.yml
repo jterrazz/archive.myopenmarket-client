@@ -3,8 +3,13 @@ parameters:
     default: false # value passed to the condition
     type: boolean
 
-  # stages:
-    # - name: stageeee
+resources:
+  pipelines:
+  - pipeline: theopenmarket.tom-web\
+    trigger: 
+      branches:
+      - releases/*
+      - master
 
 jobs:
   - job: Deploy
