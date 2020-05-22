@@ -5,11 +5,12 @@ parameters:
 
   # stages:
     # - name: stageeee
-    jobs:
+jobs:
+  - job: Deploy
+    steps:
     - script: echo I did a thing
       condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-    - job: B
-      steps:
+  
 
 # resources:
 #   pipelines:
