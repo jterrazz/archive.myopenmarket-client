@@ -5,7 +5,7 @@ parameters:
 
 resources:
   pipelines:
-  - pipeline: web
+  - pipeline: theopenmarket.tom-web
     source: theopenmarket.tom-web
     trigger: 
       branches:
