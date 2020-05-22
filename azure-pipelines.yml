@@ -5,11 +5,12 @@ parameters:
 
   # stages:
     # - name: stageeee
+
 jobs:
   - job: Deploy
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     steps:
     - script: echo I did a thing
-      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   
 
 # resources:
