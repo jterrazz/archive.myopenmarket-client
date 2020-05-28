@@ -6,7 +6,9 @@ import MSFeatures from '../organisms/information/MSFeatures';
 const Home = () => (
     <main>
         <div className='my-5' />
-        <Link href='/shops/2323'>tset</Link>
+        <Link href='/shops/[id]' as={`/shops/${2}`}>
+            tset
+        </Link>
         <MSFeatures />
     </main>
 );
