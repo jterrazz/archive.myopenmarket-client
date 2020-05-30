@@ -1,4 +1,4 @@
 module.exports = {
-    distDir: '../.next',
+    distDir: '.next',
     target: 'serverless',
 };
