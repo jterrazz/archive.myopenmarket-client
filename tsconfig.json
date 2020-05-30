@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,8 +19,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@tom": ["src/librairies/tom-classes"]
+      "~/*": ["./src/*"],
+      "@tom": ["./libs/tom-classes"]
     },
   },
   "exclude": [
