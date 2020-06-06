@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "postinstall": "cd libs/tom-classes && yarn",
-    "dev": "CLASS_TYPE=server next dev",
-    "build": "CLASS_TYPE=server next build",
-    "start": "CLASS_TYPE=server next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "husky": {
