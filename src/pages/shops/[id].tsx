@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GetServerSideProps } from 'next';
+import { TObject, TRouter, TLogger } from '@tom';
 
 import Shop from '../../components/templates/Shop';
+
+const tLogger = new TLogger(__filename);
 
 const _getProducts = async (tag) => {
     return [{ name: tag.name }];
