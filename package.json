@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "postinstall": "cd libs/tom-classes && yarn",
+    "dev": "CLASS_TYPE=server next dev",
+    "build": "CLASS_TYPE=server next build",
+    "start": "CLASS_TYPE=server next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "husky": {
@@ -19,9 +20,12 @@
     ]
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@timberio/browser": "^0.35.0",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.4.1",
     "lodash": "^4.17.15",
+    "mixpanel": "^0.11.0",
     "next": "9.3.6",
     "prop-types": "^15.7.2",
     "react": "16.13.1",

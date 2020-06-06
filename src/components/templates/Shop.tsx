@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 import StoreBanner from '../organisms/banner/StoreBanner';
 import SectionTags from '../molecules/SectionTags';
 import ProductCellsGrid from '../organisms/grid/ProductCells';
-import { TObject, TRouter } from '@tom';
+import { TObject, TRouter, TLogger } from '@tom';
+
+import r from 'next/router';
+const router = new TRouter(r);
+const logger = new TLogger(__filename);
 
 const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
     const bannerInfos = TObject.mapKeys(shopInfos, { name: 'title' });
@@ -16,8 +20,9 @@ const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
     }, []);
 
     const _onTagFocusChange = async (tag) => {
+        logger.info('focus change2222', { extra: 20, heeeee: true });
         getProducts(tag).then(setDisplayedProducts);
-        await TRouter.silentlyUpdateQuery({ tag: tag.name });
+        await router.silentlyUpdateQuery({ tag: tag.name });
     };
 
     return (

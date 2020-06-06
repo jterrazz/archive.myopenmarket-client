@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2020",
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,7 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "@tom": ["./libs/tom-classes"]
+      "@tom": ["./libs/tom-classes/web"]
     },
   },
   "exclude": [
