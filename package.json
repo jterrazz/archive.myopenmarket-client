@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "cd libs/tom-classes && yarn install --ignore-scripts",
     "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
@@ -44,6 +43,7 @@
     "eslint-plugin-react": "^7.19.0",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "vercel": "^19.2.0"
   }
 }
