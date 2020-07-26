@@ -20,8 +20,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "@tom": ["./libs/tom-classes/web"]
-    },
+      "@tom": ["./libs/the-open-market"],
+      "@config": ["./src/config"]
+    }
   },
   "exclude": [
     "node_modules"

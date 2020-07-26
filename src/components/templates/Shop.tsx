@@ -4,15 +4,13 @@ import PropTypes from 'prop-types';
 import StoreBanner from '../organisms/banner/StoreBanner';
 import SectionTags from '../molecules/SectionTags';
 import ProductCellsGrid from '../organisms/grid/ProductCells';
-import { TObject, TRouter, TLogger } from '@tom';
 
 import r from 'next/router';
-const router = new TRouter(r);
-const logger = new TLogger(__filename);
+// const router = new TRouter(r);
 
 const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
-    const bannerInfos = TObject.mapKeys(shopInfos, { name: 'title' });
-    const tagSections = shopInfos.productTags.map((p) => TObject.mapKeys(p, { count: 'counter' }));
+    // const bannerInfos = Object.prototype.mapKeys(shopInfos, { name: 'title' });
+    // const tagSections = shopInfos.productTags.map((p) => Object.prototype.mapKeys(p, { count: 'counter' }));
     const [displayedProducts, setDisplayedProducts] = useState([]);
 
     useEffect(() => {
@@ -20,15 +18,14 @@ const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
     }, []);
 
     const _onTagFocusChange = async (tag) => {
-        logger.info('focus change2222', { extra: 20, heeeee: true });
         getProducts(tag).then(setDisplayedProducts);
-        await router.silentlyUpdateQuery({ tag: tag.name });
+        // await router.silentlyUpdateQuery({ tag: tag.name });
     };
 
     return (
         <div className='container'>
-            <StoreBanner {...bannerInfos} />
-            <SectionTags tags={tagSections} onTagFocusChange={_onTagFocusChange} />
+            {/*<StoreBanner {...bannerInfos} />*/}
+            {/*<SectionTags tags={tagSections} onTagFocusChange={_onTagFocusChange} />*/}
             <ProductCellsGrid products={displayedProducts} />
         </div>
     );

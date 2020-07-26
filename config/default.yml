@@ -1,0 +1,6 @@
+app:
+  router:
+    search: "/search"
+  api:
+    routes:
+      state: "/"
