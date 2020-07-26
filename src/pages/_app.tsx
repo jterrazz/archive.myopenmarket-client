@@ -8,7 +8,7 @@ const App = ({ Component, pageProps }) => (
     <>
         <div
             dangerouslySetInnerHTML={{
-                __html: '<!-- How to hack this website: https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
+                __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
         <TheNavBar />

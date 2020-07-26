@@ -2,7 +2,7 @@ import React from 'react';
 import Router, { useRouter } from 'next/router';
 
 import SearchBar from '../molecules/SearchBar';
-import { SEARCH_ROUTE } from '../../config/routes';
+import getConfig from 'next/config'
 
 const TheNavBar = () => {
     const router = useRouter();
@@ -10,7 +10,7 @@ const TheNavBar = () => {
     // TODO Move to a more general location, to eventually share it with other search bars
     const _handleSearchProduct = async (searchedValue: string) => {
         await Router.push({
-            pathname: SEARCH_ROUTE,
+            pathname: getConfig().routes.search,
             query: { q: searchedValue },
         });
     };
