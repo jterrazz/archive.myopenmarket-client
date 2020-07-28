@@ -3,9 +3,9 @@ import getConfig from 'next/config';
 
 class TomApi {
     _client = axios.create({
-        baseURL: getConfig().app.api.host,
+        baseURL: getConfig().publicRuntimeConfig.app.api.host,
     });
-    _routes = getConfig().app.api.routes;
+    _routes = getConfig().publicRuntimeConfig.app.api.routes;
 
     /*
      * Status

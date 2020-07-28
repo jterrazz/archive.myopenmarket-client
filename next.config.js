@@ -18,6 +18,7 @@ const _buildAndVerifyConfigFromYml = (ymlSection, joiSchema) => {
 const appConfig = _buildAndVerifyConfigFromYml(
     'app',
     Joi.object({
+        'page-title': Joi.string().required(),
         api: Joi.object({
             host: Joi.string().required(),
             routes: Joi.object().required(),

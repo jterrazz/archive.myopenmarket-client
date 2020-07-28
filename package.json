@@ -19,14 +19,18 @@
     ]
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
     "@zeit/next-sass": "^1.0.1",
+    "apollo-boost": "^0.4.9",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "config": "^3.3.1",
     "dotenv": "^8.2.0",
+    "graphql": "^15.3.0",
     "joi": "^17.1.1",
     "lodash": "^4.17.15",
     "next": "9.4.4",
+    "next-with-apollo": "^5.1.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
