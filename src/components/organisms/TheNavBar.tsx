@@ -16,11 +16,12 @@ const TheNavBar = () => {
     };
 
     return (
-        <nav className='bg-primary d-flex justify-content-between text-white position-sticky'>
-            <div className='px-4 py-2'>{router.pathname}</div>
+        <nav className='border-bottom shadow-md d-flex align-items-center text-white position-sticky p-3'>
+            <div className='px-4'>{router.pathname}</div>
             <SearchBar handleSearch={_handleSearchProduct} />
-            <button>Login</button>
-            <button>Register</button>
+            <button className='tom-btn-light'>Support</button>
+            <button className='tom-btn-light mx-2'>Log in</button>
+            <button className='tom-btn-primary ml-2'>Sign up</button>
         </nav>
     );
 };

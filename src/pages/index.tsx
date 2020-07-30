@@ -10,7 +10,7 @@ import { tomApolloClient } from '~/services/tom-api/apollo/with-apollo';
 
 const USER_QUERY = gql`
     query {
-        user(id: 1) {
+        user(id: 12) {
             firstName
             lastName
         }
@@ -24,7 +24,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         query: USER_QUERY,
         // variables: { userName: context.params?.userId },
     });
-    console.log(user);
     return {
         props: {},
     };

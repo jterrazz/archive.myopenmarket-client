@@ -13,8 +13,10 @@ const App = ({ Component, pageProps, apollo }) => (
                 __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
-        <TheNavBar />
-        <Component {...pageProps} />
+        <div className='bg-white'>
+            <TheNavBar />
+            <Component {...pageProps} />
+        </div>
     </ApolloProvider>
 );
 
