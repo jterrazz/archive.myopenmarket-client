@@ -33,8 +33,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set env to staging
-          if: endsWith(github.ref, '/develop')
-          run: |
+        if: endsWith(github.ref, '/develop')
+        run: |
             echo "::set-env name=VERCEL_ARGS::"
       - name: Set env to production
         if: endsWith(github.ref, '/master')
