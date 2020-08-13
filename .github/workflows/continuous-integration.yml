@@ -1,14 +1,14 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Continuous integration
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - develop
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - develop
 
 jobs:
   build:
@@ -29,15 +29,23 @@ jobs:
         
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
+      - name: Set env to staging
+          if: endsWith(github.ref, '/develop')
+          run: |
+            echo "::set-env name=VERCEL_ARGS::"
+      - name: Set env to production
+        if: endsWith(github.ref, '/master')
+        run: |
+          echo "::set-env name=VERCEL_ARGS::--prod"
       - name: Deploy to vercel
         uses: amondnet/vercel-action@v19
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
 #           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
-#           vercel-args: '--prod' #Optional
+          vercel-args: ${{ env.VERCEL_ARGS }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
 #           working-directory: ./sub-directory #Your Working Directory, Optional
