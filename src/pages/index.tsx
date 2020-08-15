@@ -3,27 +3,9 @@ import getConfig from 'next/config';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
-import { gql } from 'apollo-boost';
-
 import Home from '../components/templates/Home';
-import { tomApolloClient } from '~/services/tom-api/apollo/with-apollo';
-
-const USER_QUERY = gql`
-    query {
-        user(id: 12) {
-            firstName
-            lastName
-        }
-    }
-`;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const {
-        data: { user },
-    } = await tomApolloClient.query({
-        query: USER_QUERY,
-        // variables: { userName: context.params?.userId },
-    });
     return {
         props: {},
     };
