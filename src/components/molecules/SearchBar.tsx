@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+// :focus-within
+
 // TODO HandleSearch is promise
 const SearchBar = ({ handleSearch }) => {
     const [searchedValue, setSearchedValue] = useState('');
@@ -16,18 +18,26 @@ const SearchBar = ({ handleSearch }) => {
     };
 
     return (
-        <>
+        <div className='flex-fill d-flex ml-3 mr-5 tom-input--gray rounded-pill'>
             <input
                 value={searchedValue}
                 placeholder='hello'
                 onChange={(e) => setSearchedValue(e.target.value)}
                 onKeyDown={_handleKeyDown}
-                className='flex-fill bg-transparent border-0 text-white mt-5'
+                className='flex-fill border-0 bg-transparent p-2 px-4 tom-text--medium input--no-outline'
             />
-            <button onClick={() => _handleSearch(searchedValue)}>Find me the best !</button>
-        </>
+            {/*<button onClick={() => _handleSearch(searchedValue)}>Find me the best !</button>*/}
+        </div>
     );
 };
+
+// Propositions
+// Store 1
+// Store 2
+// Search all stores
+// Product 1
+// Product 2
+// Search all products
 
 SearchBar.propTypes = {
     handleSearch: PropTypes.func.isRequired,

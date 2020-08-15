@@ -1,24 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../styles/global.scss';
 import TheNavBar from '../components/organisms/TheNavBar';
-import PropTypes from 'prop-types';
 
 const App = ({ Component, pageProps }) => (
     <>
         <div
             dangerouslySetInnerHTML={{
-                __html: '<!-- How to hack this website: https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
+                __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
-        <TheNavBar />
-        <Component {...pageProps} />
+        <div className='bg-white'>
+            <TheNavBar />
+            <Component {...pageProps} />
+        </div>
     </>
 );
 
 App.propTypes = {
     Component: PropTypes.func,
     pageProps: PropTypes.object,
+    apollo: PropTypes.object,
 };
 
 export default App;

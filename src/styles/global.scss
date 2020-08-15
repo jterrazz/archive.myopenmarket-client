@@ -1,26 +1,58 @@
 @import './_variables';
+@import "./fonts";
+@import "./buttons";
+@import "./inputs";
+
+/* Imports */
 @import '~bootstrap/scss/bootstrap';
 
-.bg-gray-clear {
-    background-color: $grey;
+body {
+    font-family: "silka";
+    color: $text-color;
 }
 
-// Size
-
-.x-5em {
-    width: 5 * $base-size;
+a {
+    color: $text-color;
+    &:hover {
+        color: $text-color;
+        text-decoration: none;
+    }
 }
 
-.x-5em {
-    height: 5 * $base-size;
+// Border
+
+.tom-bg-gray--light {
+    background-color: $gray-light;
 }
+
+.bg-gray {
+    background-color: $gray;
+}
+
+.shadow-md {
+    box-shadow: 0px 7px 20px -13px rgba(0,0,0,0.35);
+}
+
+.tom-text--medium {
+    font-size: 0.92rem;
+}
+
+// // Size
+
+// .x-5em {
+//     width: 5 * $base-size;
+// }
+
+// .x-5em {
+//     height: 5 * $base-size;
+// }
 
 // Tags
 
 .tag {
     font-size: 0.8rem;
-    color: $grey;
-    background: $grey-clear;
+    color: grey;
+    background: $gray-light;
     padding: 3px 10px;
     @extend .rounded-pill;
 }

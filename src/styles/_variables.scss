@@ -1,7 +1,20 @@
-$blue: #0364ff;
-$grey-clear: rgb(239, 239, 239);
-$grey: rgb(170, 170, 170);
-
-$primary: $blue;
+// Shared sizes
 
 $base-size: 20px;
+
+// Shared timing
+
+$time-fast: 0.18s;
+
+// Shared colors
+
+$blue: rgb(86, 140, 244); // Button in white perfect
+
+$gray-lighter: rgb(238, 238, 238);
+$gray-light: #eee;
+$gray: #d1d1d1;
+
+// Use cases
+
+$primary: $blue;
+$text-color: rgb(56, 64, 74);

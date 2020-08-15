@@ -1,28 +1,52 @@
 import React from 'react';
 import Router, { useRouter } from 'next/router';
+import getConfig from 'next/config';
+import Link from 'next/link';
 
 import SearchBar from '../molecules/SearchBar';
-import { SEARCH_ROUTE } from '../../config/routes';
 
 const TheNavBar = () => {
     const router = useRouter();
 
     // TODO Move to a more general location, to eventually share it with other search bars
-    const _handleSearchProduct = async (searchedValue: string) => {
+    const handleSearchProduct = async (searchedValue: string) => {
         await Router.push({
-            pathname: SEARCH_ROUTE,
+            pathname: getConfig().publicRuntimeConfig.routes.search,
             query: { q: searchedValue },
         });
     };
 
+    const _mainNavBar = () => (
+        <div className='d-flex align-items-center p-2 px-3'>
+            <Link href='/'>
+                <a>
+                    <div className='font-weight-bold mx-3'>THE OPEN MARKET</div>
+                </a>
+            </Link>
+
+            <a>
+                <button className='tom-btn-light mx-3'>Home</button>
+            </a>
+            <button className='tom-btn-light'>Stores</button>
+
+            <SearchBar handleSearch={handleSearchProduct} />
+            <button className='tom-btn-light'>Support</button>
+            <button className='tom-btn-light mx-1'>Log in</button>
+            <button className='tom-btn-primary ml-2'>Sign up</button>
+        </div>
+    );
+
+    const _storeNavBar = () => <div>fefefef</div>;
+
     return (
-        <nav className='bg-primary d-flex justify-content-between text-white position-sticky'>
-            <div className='px-4 py-2'>{router.pathname}</div>
-            <SearchBar handleSearch={_handleSearchProduct} />
-            <button>Login</button>
-            <button>Register</button>
+        <nav className='border-bottom shadow-md position-sticky'>
+            {_mainNavBar()}
+            {_storeNavBar()}
         </nav>
     );
 };
+
+// Under for navbbar
+// Categories | #part1 | #part2
 
 export default TheNavBar;

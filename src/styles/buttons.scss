@@ -1,0 +1,28 @@
+@import './_variables';
+
+// Sizes
+
+.tom-btn-size--md {
+  font-size: 0.90rem;
+  padding: 12px;
+  line-height: 10px;
+}
+
+// General
+
+.tom-btn-primary {
+  @extend .btn-primary;
+  @extend .rounded;
+  @extend .border-0;
+  @extend .tom-btn-size--md;
+  font-weight: 600;
+}
+
+.tom-btn-light {
+  @extend .tom-btn-size--md;
+  @extend .btn-light;
+  @extend .border-0;
+  background-color: transparent !important;
+  color: $text-color !important;
+  font-weight: 500;
+}

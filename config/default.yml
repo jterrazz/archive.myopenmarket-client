@@ -1,0 +1,7 @@
+app:
+  page-title: "The Open Market"
+  router:
+    search: "/search"
+  api:
+    routes:
+      state: "/"

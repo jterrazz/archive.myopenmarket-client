@@ -4,27 +4,28 @@ import PropTypes from 'prop-types';
 import StoreBanner from '../organisms/banner/StoreBanner';
 import SectionTags from '../molecules/SectionTags';
 import ProductCellsGrid from '../organisms/grid/ProductCells';
-import { TOMObject, TOMRouter } from '~/librairies/tom-classes';
+
+import r from 'next/router';
+// const router = new TRouter(r);
 
 const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
-    const bannerInfos = TOMObject.mapKeys(shopInfos, { name: 'title' });
-    const tagSections = shopInfos.productTags.map((p) => TOMObject.mapKeys(p, { count: 'counter' }));
+    // const bannerInfos = Object.prototype.mapKeys(shopInfos, { name: 'title' });
+    // const tagSections = shopInfos.productTags.map((p) => Object.prototype.mapKeys(p, { count: 'counter' }));
     const [displayedProducts, setDisplayedProducts] = useState([]);
 
-    // TODO Use only for fetching when clicking another tag, else use default
     useEffect(() => {
         setDisplayedProducts(defaultProducts);
     }, []);
 
     const _onTagFocusChange = async (tag) => {
         getProducts(tag).then(setDisplayedProducts);
-        await TOMRouter.silentlyUpdateQuery({ tag: tag.name });
+        // await router.silentlyUpdateQuery({ tag: tag.name });
     };
 
     return (
         <div className='container'>
-            <StoreBanner {...bannerInfos} />
-            <SectionTags tags={tagSections} onTagFocusChange={_onTagFocusChange} />
+            {/*<StoreBanner {...bannerInfos} />*/}
+            {/*<SectionTags tags={tagSections} onTagFocusChange={_onTagFocusChange} />*/}
             <ProductCellsGrid products={displayedProducts} />
         </div>
     );
