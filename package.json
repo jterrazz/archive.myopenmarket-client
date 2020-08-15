@@ -21,7 +21,6 @@
     ]
   },
   "dependencies": {
-    "@apollo/react-hooks": "^4.0.0",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
