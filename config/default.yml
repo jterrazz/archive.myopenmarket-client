@@ -1,7 +1,10 @@
 app:
-  page-title: "The Open Market"
+  pageTitle: 'The Open Market'
   router:
-    search: "/search"
+    search: '/search'
   api:
     routes:
-      state: "/"
+      state: '/'
+      authentication:
+        signIn: '/auth/signin'
+        signUp: '/auth/signup'

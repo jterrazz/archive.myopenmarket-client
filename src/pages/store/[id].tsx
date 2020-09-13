@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GetServerSideProps } from 'next';
 
-import Shop from '../../components/templates/Shop';
+import Shop from '../../components/templates/ShopOverview';
 
 const _getProducts = async (tag) => {
     return [{ name: tag.name }];

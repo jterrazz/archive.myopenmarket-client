@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Search = ({ query, products }) => (
+const SearchResults = ({ query, products }) => (
     <div>
         <h1>Results for {query}</h1>
         <ul>
@@ -12,9 +12,9 @@ const Search = ({ query, products }) => (
     </div>
 );
 
-Search.propTypes = {
+SearchResults.propTypes = {
     query: PropTypes.string.isRequired,
     products: PropTypes.array.isRequired,
 };
 
-export default Search;
+export default SearchResults;

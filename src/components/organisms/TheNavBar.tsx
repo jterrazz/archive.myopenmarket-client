@@ -6,8 +6,6 @@ import Link from 'next/link';
 import SearchBar from '../molecules/SearchBar';
 
 const TheNavBar = () => {
-    const router = useRouter();
-
     // TODO Move to a more general location, to eventually share it with other search bars
     const handleSearchProduct = async (searchedValue: string) => {
         await Router.push({
@@ -19,34 +17,33 @@ const TheNavBar = () => {
     const _mainNavBar = () => (
         <div className='d-flex align-items-center p-2 px-3'>
             <Link href='/'>
-                <a>
-                    <div className='font-weight-bold mx-3'>THE OPEN MARKET</div>
-                </a>
+                <div className='font-weight-bold mx-3'>THE OPEN MARKET</div>
             </Link>
 
-            <a>
-                <button className='tom-btn-light mx-3'>Home</button>
-            </a>
-            <button className='tom-btn-light'>Stores</button>
+            <Link href='/'>
+                <button className='button--light mx-3'>Home</button>
+            </Link>
+            <button className='button--light'>Stores</button>
 
             <SearchBar handleSearch={handleSearchProduct} />
-            <button className='tom-btn-light'>Support</button>
-            <button className='tom-btn-light mx-1'>Log in</button>
-            <button className='tom-btn-primary ml-2'>Sign up</button>
+            <button className='button--light'>Support</button>
+            <Link href='/signin'>
+                <button className='button--light mx-1'>Log in</button>
+            </Link>
+            <button className='button--primary ml-2'>Sign up</button>
         </div>
     );
 
-    const _storeNavBar = () => <div>fefefef</div>;
+    // Under for navbbar
+    // Categories | #part1 | #part2
+    // const _storeNavBar = () => <div>fefefef</div>;
 
     return (
         <nav className='border-bottom shadow-md position-sticky'>
             {_mainNavBar()}
-            {_storeNavBar()}
+            {/*{_storeNavBar()}*/}
         </nav>
     );
 };
-
-// Under for navbbar
-// Categories | #part1 | #part2
 
 export default TheNavBar;
