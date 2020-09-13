@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { GetServerSideProps } from 'next';
 
-import Search from '../components/templates/Search';
+import SearchResults from '../components/templates/SearchResults';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => ({
     props: {
@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => ({
 });
 
 const SearchPage = ({ products, query }) => (
-    <Search query={Array.isArray(query) ? query[0] : query} products={products} />
+    <SearchResults query={Array.isArray(query) ? query[0] : query} products={products} />
 );
 
 SearchPage.propTypes = {

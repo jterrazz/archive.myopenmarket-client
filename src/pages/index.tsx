@@ -14,8 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 const HomePage = () => (
     <div>
         <Head>
-            <title>Home - {getConfig().publicRuntimeConfig.app['page-title']}</title>
-            <link rel='icon' href='/favicon.ico' />
+            <title>Home - {getConfig().publicRuntimeConfig.app.pageTitle}</title>
         </Head>
 
         <Home />

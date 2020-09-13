@@ -2,7 +2,7 @@
 
 // Sizes
 
-.tom-btn-size--md {
+.button--md {
   font-size: 0.90rem;
   padding: 12px;
   line-height: 10px;
@@ -10,16 +10,16 @@
 
 // General
 
-.tom-btn-primary {
+.button--primary {
   @extend .btn-primary;
   @extend .rounded;
   @extend .border-0;
-  @extend .tom-btn-size--md;
+  @extend .button--md;
   font-weight: 600;
 }
 
-.tom-btn-light {
-  @extend .tom-btn-size--md;
+.button--light {
+  @extend .button--md;
   @extend .btn-light;
   @extend .border-0;
   background-color: transparent !important;

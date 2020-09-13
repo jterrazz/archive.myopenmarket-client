@@ -1,7 +1,7 @@
 @import './_variables';
 
 .tom-input--gray {
-  @extend .tom-bg-gray--light;
+  @extend .bg-gray--light;
   border: 1px solid transparent;
   transition: $time-fast ease-in;
 
@@ -12,7 +12,7 @@
 
 .tom-input--white {
   background: white !important;
-  border: 1px solid $gray-light;
+  border: 1px solid $gray--light;
   transition: $time-fast ease-in;
 
   &:focus-within {

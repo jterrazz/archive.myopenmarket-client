@@ -2,12 +2,13 @@
 @import "./fonts";
 @import "./buttons";
 @import "./inputs";
+@import "./colors";
 
 /* Imports */
 @import '~bootstrap/scss/bootstrap';
 
 body {
-    font-family: "silka";
+    font-family: "silka", "Helvetica Neue", Helvetica, serif;
     color: $text-color;
 }
 
@@ -17,20 +18,6 @@ a {
         color: $text-color;
         text-decoration: none;
     }
-}
-
-// Border
-
-.tom-bg-gray--light {
-    background-color: $gray-light;
-}
-
-.bg-gray {
-    background-color: $gray;
-}
-
-.shadow-md {
-    box-shadow: 0px 7px 20px -13px rgba(0,0,0,0.35);
 }
 
 .tom-text--medium {
@@ -52,7 +39,7 @@ a {
 .tag {
     font-size: 0.8rem;
     color: grey;
-    background: $gray-light;
+    background: $gray--light;
     padding: 3px 10px;
     @extend .rounded-pill;
 }
