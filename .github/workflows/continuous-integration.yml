@@ -47,8 +47,7 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
           alias-domains: |
-            staging.angular.vercel-action.amond.dev
-            pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
+            development.theopen.market
 
       # Staging
       - name: Set env to production
@@ -64,5 +63,4 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
           alias-domains: |
-            staging.angular.vercel-action.amond.dev
-            pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
+            staging.theopen.market
