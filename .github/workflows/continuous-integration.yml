@@ -40,6 +40,7 @@ jobs:
         run: |
             echo "::set-env name=VERCEL_ARGS::"
       - name: Deploy to vercel
+        if: endsWith(github.ref, '/develop')
         uses: amondnet/vercel-action@v19
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
@@ -50,12 +51,13 @@ jobs:
             development.theopen.market
 
       # Staging
-      - name: Set env to production
-        if: endsWith(github.ref, '/master')
-        run: |
-          echo "::set-env name=VERCEL_ARGS::--prod"
+#      - name: Set env to production
+#        if: endsWith(github.ref, '/master')
+#        run: |
+#          echo "::set-env name=VERCEL_ARGS::--prod"
 
       - name: Deploy to vercel
+        if: endsWith(github.ref, '/master')
         uses: amondnet/vercel-action@v19
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required

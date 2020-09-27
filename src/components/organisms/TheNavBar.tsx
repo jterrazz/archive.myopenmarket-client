@@ -1,33 +1,9 @@
 import React from 'react';
-import Router from 'next/router';
-import getConfig from 'next/config';
 import Link from 'next/link';
 
-import SearchBar from '../molecules/SearchBar';
-import PropTypes from 'prop-types';
+import SearchBar from '~/components/molecules/SearchBar';
 
-// import * as apiClient from '~/services/api';
-//
-// // TODO Move outside for cache
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//     const authentifiedUser = await apiClient.getMe(ctx);
-//
-//     return {
-//         props: {
-//             authentifiedUser: JSON.stringify(authentifiedUser),
-//         },
-//     };
-// };
-
-const TheNavBar = ({ authentifiedUser }) => {
-    // TODO Move to a more general location, to eventually share it with other search bars
-    const _searchProduct = async (searchedValue: string) => {
-        await Router.push({
-            pathname: getConfig().publicRuntimeConfig.routes.search,
-            query: { q: searchedValue },
-        });
-    };
-
+const TheNavBar = ({ user, submitSearchHandler }) => {
     const _renderAuthentifiedUser = async () => {
         return (
             <div>
@@ -49,7 +25,7 @@ const TheNavBar = ({ authentifiedUser }) => {
             </Link>
             <button className='button--light'>Stores</button>
 
-            <SearchBar handleSearch={_searchProduct} />
+            <SearchBar handleSearch={submitSearchHandler} />
             <Link href='/support'>
                 <a>
                     <button className='button--light'>Support</button>
@@ -80,10 +56,6 @@ const TheNavBar = ({ authentifiedUser }) => {
             {/*{_storeNavBar()}*/}
         </nav>
     );
-};
-
-TheNavBar.propTypes = {
-    authentifiedUser: PropTypes.object,
 };
 
 export default TheNavBar;

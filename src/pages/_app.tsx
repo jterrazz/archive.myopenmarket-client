@@ -12,6 +12,7 @@ const _getEnvironmentMessage = (): string => {
     const environmentMessages = {
         development: 'Development environment',
         staging: 'Staging environment',
+        production: 'Website is still in development',
     };
     return environmentMessages[environment];
 };

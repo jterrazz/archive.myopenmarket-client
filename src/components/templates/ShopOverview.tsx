@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import StoreBanner from '../organisms/banner/StoreBanner';
+import StoreBanner from '../molecules/banner/StoreBanner';
 import SectionTags from '../molecules/SectionTags';
 import ProductCellsGrid from '../organisms/grid/ProductCells';
 
