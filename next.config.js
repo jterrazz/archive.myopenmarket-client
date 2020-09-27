@@ -30,6 +30,10 @@ const appConfig = _buildAndVerifyConfigFromYml(
 module.exports = {
     distDir: '.next',
     target: 'serverless',
+    excludeFile: (file) => {
+        return true;
+        return /\*.{spec,test,stories}.js/.test(file);
+    },
     serverRuntimeConfig: {
         // Will only be available on the server side
     },
