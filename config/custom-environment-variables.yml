@@ -1,2 +1,4 @@
 app:
-  pageTitle: "PAGE_TITLE"
+  api:
+    host: 'API_HOST'
+  pageTitle: "PAGE_DEFAULT_TITLE"

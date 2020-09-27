@@ -1,6 +1,9 @@
 app:
   pageTitle: 'The Open Market'
   router:
+    authentication:
+      signIn: '/signin'
+      signUp: '/signup'
     search: '/search'
   api:
     routes:
@@ -8,3 +11,5 @@ app:
       authentication:
         signIn: '/auth/signin'
         signUp: '/auth/signup'
+      me:
+        get: '/me'

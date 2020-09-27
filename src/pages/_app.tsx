@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-import '../styles/global.scss';
-import TheNavBar from '../components/organisms/TheNavBar';
+import '~/styles/global.scss';
 
 const App = ({ Component, pageProps }) => (
     <>
@@ -15,8 +14,7 @@ const App = ({ Component, pageProps }) => (
                 __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
-        <div className='bg-white'>
-            <TheNavBar />
+        <div className='bg-white vh-100 d-flex flex-column'>
             <Component {...pageProps} />
         </div>
     </>
@@ -25,7 +23,6 @@ const App = ({ Component, pageProps }) => (
 App.propTypes = {
     Component: PropTypes.func,
     pageProps: PropTypes.object,
-    apollo: PropTypes.object,
 };
 
 export default App;

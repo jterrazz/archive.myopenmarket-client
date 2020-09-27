@@ -1,36 +1,72 @@
 import React from 'react';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 import getConfig from 'next/config';
 import Link from 'next/link';
 
 import SearchBar from '../molecules/SearchBar';
+import PropTypes from 'prop-types';
 
-const TheNavBar = () => {
+// import * as apiClient from '~/services/api';
+//
+// // TODO Move outside for cache
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//     const authentifiedUser = await apiClient.getMe(ctx);
+//
+//     return {
+//         props: {
+//             authentifiedUser: JSON.stringify(authentifiedUser),
+//         },
+//     };
+// };
+
+const TheNavBar = ({ authentifiedUser }) => {
     // TODO Move to a more general location, to eventually share it with other search bars
-    const handleSearchProduct = async (searchedValue: string) => {
+    const _searchProduct = async (searchedValue: string) => {
         await Router.push({
             pathname: getConfig().publicRuntimeConfig.routes.search,
             query: { q: searchedValue },
         });
     };
 
-    const _mainNavBar = () => (
+    const _renderAuthentifiedUser = async () => {
+        return (
+            <div>
+                <div>{'yo'}</div>.0
+                <div>{'sign out'}</div>
+            </div>
+        );
+    };
+
+    const _renderMainNavBar = () => (
         <div className='d-flex align-items-center p-2 px-3'>
             <Link href='/'>
                 <div className='font-weight-bold mx-3'>THE OPEN MARKET</div>
             </Link>
-
             <Link href='/'>
-                <button className='button--light mx-3'>Home</button>
+                <a>
+                    <button className='button--light mx-3'>Home</button>
+                </a>
             </Link>
             <button className='button--light'>Stores</button>
 
-            <SearchBar handleSearch={handleSearchProduct} />
-            <button className='button--light'>Support</button>
-            <Link href='/signin'>
-                <button className='button--light mx-1'>Log in</button>
+            <SearchBar handleSearch={_searchProduct} />
+            <Link href='/support'>
+                <a>
+                    <button className='button--light'>Support</button>
+                </a>
             </Link>
-            <button className='button--primary ml-2'>Sign up</button>
+            <Link href='/signin'>
+                <a>
+                    <button className='button--light mx-1'>Log in</button>
+                </a>
+            </Link>
+            <Link href='/signup'>
+                <a>
+                    <button className='button--primary ml-2'>Sign up</button>
+                </a>
+            </Link>
+
+            {/*{_renderAuthentifiedUser()}*/}
         </div>
     );
 
@@ -40,10 +76,14 @@ const TheNavBar = () => {
 
     return (
         <nav className='border-bottom shadow-md position-sticky'>
-            {_mainNavBar()}
+            {_renderMainNavBar()}
             {/*{_storeNavBar()}*/}
         </nav>
     );
+};
+
+TheNavBar.propTypes = {
+    authentifiedUser: PropTypes.object,
 };
 
 export default TheNavBar;

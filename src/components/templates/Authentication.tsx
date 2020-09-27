@@ -1,44 +1,14 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import React, { ReactChild } from 'react';
 
-import * as apiClient from '~/services/api';
+export interface AuthenticationProps {
+    children: ReactChild;
+}
 
-const Authentication = () => {
-    const [credentials, setCredentials] = useState({ email: '', password: '' });
-    const router = useRouter();
-
-    const handleCredentialChange = (event) => {
-        const value = event.target.value;
-        const name = event.target.name;
-
-        setCredentials({
-            ...credentials,
-            [name]: value,
-        });
-    };
-
-    const submitForm = async (event) => {
-        event.preventDefault();
-
-        await apiClient.signIn(credentials);
-        await router.push('/');
-    };
-
+export const Authentication: React.FC<AuthenticationProps> = ({ children }) => {
     return (
-        <form>
-            <label>
-                Email
-                <input name='email' type='email' value={credentials.email} onChange={handleCredentialChange} />
-            </label>
-            <label>
-                Password
-                <input name='password' type='password' value={credentials.password} onChange={handleCredentialChange} />
-            </label>
-            <button type='submit' className='rounded' onClick={submitForm}>
-                Log in
-            </button>
-        </form>
+        <div className='d-flex align-items-center justify-content-center flex-fill'>
+            <h1>Authentication</h1>
+            {children}
+        </div>
     );
 };
-
-export default Authentication;

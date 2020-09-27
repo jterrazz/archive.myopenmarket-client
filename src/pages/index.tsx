@@ -3,7 +3,7 @@ import getConfig from 'next/config';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
-import Home from '../components/templates/Home';
+import { Home } from '~/components/templates/Home';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return {
