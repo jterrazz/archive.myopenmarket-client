@@ -33,23 +33,36 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      # Development
       - name: Set env to staging
         if: endsWith(github.ref, '/develop')
         run: |
             echo "::set-env name=VERCEL_ARGS::"
+      - name: Deploy to vercel
+          uses: amondnet/vercel-action@v19
+          with:
+            vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+            vercel-args: ${{ env.VERCEL_ARGS }}
+            vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
+            vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
+            alias-domains: |
+              staging.angular.vercel-action.amond.dev
+              pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
+
+      # Staging
       - name: Set env to production
         if: endsWith(github.ref, '/master')
         run: |
           echo "::set-env name=VERCEL_ARGS::--prod"
+
       - name: Deploy to vercel
         uses: amondnet/vercel-action@v19
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-#           github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
           vercel-args: ${{ env.VERCEL_ARGS }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
-#           working-directory: ./sub-directory #Your Working Directory, Optional
-#           alias-domains: | #Optional
-#             staging.angular.vercel-action.amond.dev
-#             pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
+          alias-domains: |
+            staging.angular.vercel-action.amond.dev
+            pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
