@@ -1,5 +1,9 @@
 @import './_variables';
 
+button:focus {
+  outline: 0 !important;
+}
+
 // Sizes
 
 .button--md {
@@ -20,9 +24,12 @@
 
 .button--light {
   @extend .button--md;
-  @extend .btn-light;
   @extend .border-0;
   background-color: transparent !important;
   color: $text-color !important;
   font-weight: 500;
+
+  &:hover {
+    color: black !important;
+  }
 }

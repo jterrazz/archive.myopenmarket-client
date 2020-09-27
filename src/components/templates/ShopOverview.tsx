@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import StoreBanner from '../molecules/banner/StoreBanner';
-import SectionTags from '../molecules/SectionTags';
-import ProductCellsGrid from '../organisms/grid/ProductCells';
-
-import r from 'next/router';
-// const router = new TRouter(r);
+import StoreBanner from '~/components//molecules/banners/StoreBanner';
+import SectionTags from '~/components/molecules/SectionTags';
+import ProductCellsGrid from '~/components/organisms/grids/ProductCells';
 
 const Shop = ({ shopInfos, defaultProducts, getProducts }) => {
     // const bannerInfos = Object.prototype.mapKeys(shopInfos, { name: 'title' });

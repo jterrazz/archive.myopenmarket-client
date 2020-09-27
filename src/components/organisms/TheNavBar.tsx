@@ -2,8 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 
 import SearchBar from '~/components/molecules/SearchBar';
+import Router from 'next/router';
+import getConfig from 'next/config';
 
-const TheNavBar = ({ user, submitSearchHandler }) => {
+export const TheNavBar = ({ user, submitSearchHandler }) => {
     const _renderAuthentifiedUser = async () => {
         return (
             <div>
@@ -58,4 +60,22 @@ const TheNavBar = ({ user, submitSearchHandler }) => {
     );
 };
 
-export default TheNavBar;
+export const TheNavBarWithState = () => {
+    const authenticatedUser = {
+        id: 42,
+    };
+
+    // TODO Move to a more general location, to eventually share it with other search bars
+    const _searchProduct = async (searchedValue: string) => {
+        await Router.push({
+            pathname: getConfig().publicRuntimeConfig.app.router.search,
+            query: { q: searchedValue },
+        });
+    };
+
+    return (
+        <div>
+            <TheNavBar user={authenticatedUser} submitSearchHandler={_searchProduct} />
+        </div>
+    );
+};

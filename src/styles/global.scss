@@ -7,6 +7,10 @@
 /* Imports */
 @import '~bootstrap/scss/bootstrap';
 
+* {
+    transition: ease-out 0.2s;
+}
+
 body {
     font-family: "silka", "Helvetica Neue", Helvetica, serif;
     color: $text-color;

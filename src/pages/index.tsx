@@ -4,6 +4,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import { Home } from '~/components/templates/Home';
+import { TheNavBarWithState } from '~/components/organisms/TheNavBar';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return {
@@ -17,6 +18,7 @@ const HomePage = () => (
             <title>Home - {getConfig().publicRuntimeConfig.app.pageTitle}</title>
         </Head>
 
+        <TheNavBarWithState />
         <Home />
     </div>
 );

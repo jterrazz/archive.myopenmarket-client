@@ -6,6 +6,7 @@ import * as apiClient from '~/services/api';
 
 import { SignInForm } from '~/components/organisms/forms/SignIn';
 import { Authentication } from '~/components/templates/Authentication';
+import { TheNavBarWithState } from '~/components/organisms/TheNavBar';
 
 const SignInPage = () => {
     const router = useRouter();
@@ -21,6 +22,7 @@ const SignInPage = () => {
                 <title>Sign in - {getConfig().publicRuntimeConfig.app.pageTitle}</title>
             </Head>
 
+            <TheNavBarWithState />
             <Authentication>
                 <SignInForm submitSignInHandler={_submitSignInHandler} />
             </Authentication>
