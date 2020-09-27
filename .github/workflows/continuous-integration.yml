@@ -40,15 +40,15 @@ jobs:
         run: |
             echo "::set-env name=VERCEL_ARGS::"
       - name: Deploy to vercel
-          uses: amondnet/vercel-action@v19
-          with:
-            vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-            vercel-args: ${{ env.VERCEL_ARGS }}
-            vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
-            vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
-            alias-domains: |
-              staging.angular.vercel-action.amond.dev
-              pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
+        uses: amondnet/vercel-action@v19
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-args: ${{ env.VERCEL_ARGS }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
+          alias-domains: |
+            staging.angular.vercel-action.amond.dev
+            pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
 
       # Staging
       - name: Set env to production
