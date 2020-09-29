@@ -1,5 +1,9 @@
 @import './_variables';
 
+.max-w {
+  max-width: 300px;
+}
+
 .tom-input--gray {
   @extend .bg-gray--light;
   border: 1px solid transparent;
