@@ -24,14 +24,16 @@ export const SignInForm: React.FC<SignInFormProps> = ({ submitSignInHandler }) =
 
     return (
         <form>
-            <div className='text-md-center text-left'>
-                <h1 className='text--xl mb-4'>Log in to The Open Market</h1>
+            <div className='text-md-center text-left mb-4'>
+                <h1 className='text--xl'>
+                    Log in to <br /> The Open Market
+                </h1>
             </div>
             <label className='w-100'>
-                <span className='text--sm font-weight-bold'>Email</span>
+                <span className='text--sm font-weight-500'>Email</span>
                 <br />
                 <input
-                    className='tom-input--white w-100 mt-1 p-2'
+                    className='tom-input--white w-100 mt-1 input--md'
                     name='email'
                     type='email'
                     value={credentials.email}
@@ -39,10 +41,10 @@ export const SignInForm: React.FC<SignInFormProps> = ({ submitSignInHandler }) =
                 />
             </label>
             <label className='w-100'>
-                <span className='text--sm font-weight-bold'>Password</span>
+                <span className='text--sm font-weight-500'>Password</span>
                 <br />
                 <input
-                    className='tom-input--white w-100 mt-1 p-2'
+                    className='tom-input--white w-100 mt-1 input--md'
                     name='password'
                     type='password'
                     value={credentials.password}
@@ -50,12 +52,12 @@ export const SignInForm: React.FC<SignInFormProps> = ({ submitSignInHandler }) =
                 />
             </label>
             <br />
-            <button type='submit' className='rounded button--primary p-3 mt-2 w-100' onClick={_submitForm}>
+            <button type='submit' className='rounded button--primary button--md mt-2 w-100' onClick={_submitForm}>
                 Log in
             </button>
             <button
                 type='submit'
-                className='rounded button--md border-0 bg-gray--light p-3 mt-3 w-100'
+                className='rounded button--md border-0 bg-gray--light mt-3 w-100'
                 onClick={_submitForm}
             >
                 Don't have an account ? <span>Sign up</span>

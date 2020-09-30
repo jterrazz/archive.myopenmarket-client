@@ -22,13 +22,13 @@ const App = ({ Component, pageProps }) => (
         <Head>
             <link rel='icon' href='/favicon.ico' />
         </Head>
-        <NotificationBar message={_getEnvironmentMessage()} />
         <div
             dangerouslySetInnerHTML={{
                 __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
         <div className='bg-white vh-100 d-flex flex-column'>
+            <NotificationBar message={_getEnvironmentMessage()} />
             <Component {...pageProps} />
         </div>
     </>

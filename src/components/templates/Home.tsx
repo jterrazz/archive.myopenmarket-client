@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 
-import BecomeASeller from '~/components/molecules/messages/BecomeASeller';
+import { BecomeASeller } from '~/components/molecules/messages/BecomeASeller';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = () => (
     <main className='container'>
-        <div className='mb-2' />
-
-        <BecomeASeller />
+        <div className='mt-5'>
+            <BecomeASeller />
+        </div>
 
         <div className='d-flex text-center'>
             <div className='flex-fill rounded' style={{ backgroundColor: 'rgb(223, 234, 242)' }}>
