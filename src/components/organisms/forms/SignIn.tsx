@@ -55,11 +55,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ submitSignInHandler }) =
             <button type='submit' className='rounded button--primary button--md mt-2 w-100' onClick={_submitForm}>
                 Log in
             </button>
-            <button
-                type='submit'
-                className='rounded button--md border-0 bg-gray--light mt-3 w-100'
-                onClick={_submitForm}
-            >
+            <button className='rounded button--md border-0 bg-gray--light mt-3 w-100'>
                 Don't have an account ? <span>Sign up</span>
             </button>
         </form>

@@ -18,7 +18,16 @@ export const TheNavBar = ({ user, submitSearchHandler }) => {
     const _renderMainNavBar = () => (
         <div className='d-flex align-items-center p-2 px-3'>
             <Link href='/'>
-                <div className='font-weight-bold mx-3'>THE OPEN MARKET</div>
+                <a>
+                    <img src='/images/logo.svg' style={{ height: 27 }} />
+                </a>
+            </Link>
+            <Link href='/'>
+                <a>
+                    <div className='font-weight-bold mr-3' style={{ color: '#FF8E6E', marginTop: 1, marginLeft: 6 }}>
+                        MARKET
+                    </div>
+                </a>
             </Link>
             <Link href='/'>
                 <a>
