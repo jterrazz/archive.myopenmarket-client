@@ -1,2 +1,5 @@
 app:
-  pageTitle: "PAGE_TITLE"
+  env: 'NODE_ENV'
+  api:
+    host: 'API_HOST'
+  pageTitle: "PAGE_DEFAULT_TITLE"

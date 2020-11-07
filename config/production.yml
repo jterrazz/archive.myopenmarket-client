@@ -1,3 +1,3 @@
 app:
   api:
-    host: 'http://api.theopen.market'
+    host: 'https://api.theopen.market'

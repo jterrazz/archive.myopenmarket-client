@@ -1,6 +1,12 @@
 app:
-  pageTitle: 'The Open Market'
+  env: 'development'
+  seo:
+    title: 'The Open Market'
+    description: 'Buy directly with real commerces, sell directly to your customers'
   router:
+    authentication:
+      signIn: '/signin'
+      signUp: '/signup'
     search: '/search'
   api:
     routes:
@@ -8,3 +14,5 @@ app:
       authentication:
         signIn: '/auth/signin'
         signUp: '/auth/signup'
+      me:
+        get: '/me'

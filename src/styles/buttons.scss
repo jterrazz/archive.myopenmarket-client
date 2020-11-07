@@ -1,28 +1,34 @@
 @import './_variables';
 
+button {
+  @extend .rounded;
+  font-size: 0.92rem;
+  font-weight: 500;
+  &:focus {
+    outline: 0 !important;
+  }
+}
+
 // Sizes
 
-.button--md {
-  font-size: 0.90rem;
-  padding: 12px;
-  line-height: 10px;
+button, .button--md {
+  font-weight: 500;
+  padding: 10px 16px;
 }
 
 // General
 
 .button--primary {
   @extend .btn-primary;
-  @extend .rounded;
   @extend .border-0;
-  @extend .button--md;
-  font-weight: 600;
 }
 
 .button--light {
-  @extend .button--md;
-  @extend .btn-light;
   @extend .border-0;
   background-color: transparent !important;
-  color: $text-color !important;
-  font-weight: 500;
+  color: $gray-dark !important;
+
+  &:hover {
+    color: black !important;
+  }
 }

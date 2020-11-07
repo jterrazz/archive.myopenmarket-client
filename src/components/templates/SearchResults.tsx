@@ -1,20 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Link from 'next/link';
 
-const SearchResults = ({ query, products }) => (
+export interface SearchResultsProps {
+    query: string;
+    products: any[];
+}
+
+export const SearchResults: React.FC<SearchResultsProps> = ({ query, products }) => (
     <div>
         <h1>Results for {query}</h1>
         <ul>
             {products.map((product) => (
-                <li key={product}>{product}</li>
+                <Link href='/store/[id]' as={`/store/${2}`}>
+                    <a>
+                        <li key={product}>{product}</li>
+                    </a>
+                </Link>
             ))}
         </ul>
     </div>
 );
-
-SearchResults.propTypes = {
-    query: PropTypes.string.isRequired,
-    products: PropTypes.array.isRequired,
-};
-
-export default SearchResults;

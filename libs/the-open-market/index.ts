@@ -1,3 +1,0 @@
-import './prototypes/object';
-
-// export {  };

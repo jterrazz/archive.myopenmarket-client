@@ -1,24 +1,32 @@
 import React from 'react';
-import getConfig from 'next/config';
 import { GetServerSideProps } from 'next';
-import Head from 'next/head';
 
-import Home from '../components/templates/Home';
+import { Home } from '~/components/templates/Home';
+import { TheNavBarWithState } from '~/components/organisms/TheNavBar';
+import { Head, HeadProps } from '~/components/atoms/Head';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+    const head: HeadProps = {
+        title: 'Home',
+        social: {},
+    };
+
     return {
-        props: {},
+        props: {
+            head,
+        },
     };
 };
 
-const HomePage = () => (
-    <div>
-        <Head>
-            <title>Home - {getConfig().publicRuntimeConfig.app.pageTitle}</title>
-        </Head>
+const HomePage = ({ head }) => {
+    return (
+        <div>
+            <Head {...head} />
 
-        <Home />
-    </div>
-);
+            <TheNavBarWithState />
+            <Home />
+        </div>
+    );
+};
 
 export default HomePage;

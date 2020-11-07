@@ -20,7 +20,6 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "@tom": ["./libs/the-open-market"],
       "@config": ["./src/config"]
     }
   },

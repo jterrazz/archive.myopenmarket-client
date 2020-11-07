@@ -1,9 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import getConfig from 'next/config';
 
-import '../styles/global.scss';
-import TheNavBar from '../components/organisms/TheNavBar';
+import '~/styles/global.scss';
+import { NotificationBar } from '~/components/molecules/NotificationBar';
+
+const environment = getConfig().publicRuntimeConfig.app.env;
+
+const _getEnvironmentMessage = (): string => {
+    const environmentMessages = {
+        development: 'Development environment',
+        staging: 'Staging environment',
+        production: 'Website is still in development',
+    };
+    return environmentMessages[environment];
+};
 
 const App = ({ Component, pageProps }) => (
     <>
@@ -15,8 +27,8 @@ const App = ({ Component, pageProps }) => (
                 __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
-        <div className='bg-white'>
-            <TheNavBar />
+        <div className='bg-white vh-100 d-flex flex-column'>
+            <NotificationBar message={_getEnvironmentMessage()} />
             <Component {...pageProps} />
         </div>
     </>
@@ -25,7 +37,6 @@ const App = ({ Component, pageProps }) => (
 App.propTypes = {
     Component: PropTypes.func,
     pageProps: PropTypes.object,
-    apollo: PropTypes.object,
 };
 
 export default App;

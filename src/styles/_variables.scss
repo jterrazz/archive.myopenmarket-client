@@ -1,21 +1,27 @@
-// Shared sizes
+// Sizes
 
 $base-size: 20px;
+$border-radius: 6px;
 
-// Shared timing
+// Times
 
+$delay: 0.20s;
 $time-fast: 0.18s;
 
-// Shared colors
+// Colors - palette
 
+$blue-clearer: rgb(122, 171, 237);
+$blue-clear: rgb(86, 140, 244);
 $blue: rgb(86, 140, 244);
-$blue--dark: rgb(44, 112, 215);
+$blue-dark: rgb(44, 112, 215);
+$blue-darker: rgb(44, 112, 215);
 
 $gray--lighter: rgb(238, 238, 238);
-$gray--light: #eee;
-$gray: #d1d1d1;
+$gray--light: rgb(244, 245, 246);
+$gray: rgb(174, 188, 203);
+$gray-dark: rgb(116, 129, 145);
 
-// Use cases
+// Colors - theme
 
 $primary: $blue;
-$text-color: rgb(56, 64, 74);
+$text-color: rgb(65, 81, 105);
