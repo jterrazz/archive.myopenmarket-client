@@ -6,7 +6,7 @@ import Router from 'next/router';
 import getConfig from 'next/config';
 
 export const TheNavBar = ({ user, submitSearchHandler }) => {
-    const _renderAuthentifiedUser = async () => {
+    const _renderAuthenticatedUser = async () => {
         return (
             <div>
                 <div>{'yo'}</div>.0
@@ -15,43 +15,62 @@ export const TheNavBar = ({ user, submitSearchHandler }) => {
         );
     };
 
+    const _renderLogo = () => {
+        return (
+            <>
+                <Link href='/'>
+                    <a>
+                        <img src='/images/logo.svg' style={{ height: 27 }} />
+                    </a>
+                </Link>
+                <Link href='/'>
+                    <a>
+                        <div
+                            className='font-weight-bold mr-3'
+                            style={{ color: '#FF8E6E', marginTop: 1, marginLeft: 6 }}
+                        >
+                            MARKET
+                        </div>
+                    </a>
+                </Link>
+            </>
+        );
+    };
+
+    const _renderElements = () => {
+        return (
+            <div className='d-none d-md-flex'>
+                <Link href='/'>
+                    <a>
+                        <button className='button--light mx-3'>Home</button>
+                    </a>
+                </Link>
+                <button className='button--light'>Stores</button>
+
+                <SearchBar handleSearch={submitSearchHandler} />
+                <Link href='/support'>
+                    <a>
+                        <button className='button--light'>Support</button>
+                    </a>
+                </Link>
+                <Link href='/signin'>
+                    <a>
+                        <button className='button--light mx-1'>Log in</button>
+                    </a>
+                </Link>
+                <Link href='/signup'>
+                    <a>
+                        <button className='button--primary ml-2'>Sign up</button>
+                    </a>
+                </Link>
+            </div>
+        );
+    };
+
     const _renderMainNavBar = () => (
         <div className='d-flex align-items-center p-2 px-3'>
-            <Link href='/'>
-                <a>
-                    <img src='/images/logo.svg' style={{ height: 27 }} />
-                </a>
-            </Link>
-            <Link href='/'>
-                <a>
-                    <div className='font-weight-bold mr-3' style={{ color: '#FF8E6E', marginTop: 1, marginLeft: 6 }}>
-                        MARKET
-                    </div>
-                </a>
-            </Link>
-            <Link href='/'>
-                <a>
-                    <button className='button--light mx-3'>Home</button>
-                </a>
-            </Link>
-            <button className='button--light'>Stores</button>
-
-            <SearchBar handleSearch={submitSearchHandler} />
-            <Link href='/support'>
-                <a>
-                    <button className='button--light'>Support</button>
-                </a>
-            </Link>
-            <Link href='/signin'>
-                <a>
-                    <button className='button--light mx-1'>Log in</button>
-                </a>
-            </Link>
-            <Link href='/signup'>
-                <a>
-                    <button className='button--primary ml-2'>Sign up</button>
-                </a>
-            </Link>
+            {_renderLogo()}
+            {_renderElements()}
 
             {/*{_renderAuthentifiedUser()}*/}
         </div>

@@ -1,6 +1,8 @@
 app:
   env: 'development'
-  pageTitle: 'The Open Market'
+  seo:
+    title: 'The Open Market'
+    description: 'Buy directly with real commerces, sell directly to your customers'
   router:
     authentication:
       signIn: '/signin'

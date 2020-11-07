@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { GetServerSideProps } from 'next';
 
 import Shop from '../../components/templates/ShopOverview';
+import { TheNavBarWithState } from '~/components/organisms/TheNavBar';
 
 const _getProducts = async (tag) => {
     return [{ name: tag.name }];
@@ -31,7 +32,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
 };
 
-const ShopPage = (props) => <Shop {...props} getProducts={_getProducts} />;
+const ShopPage = (props) => (
+    <div>
+        <TheNavBarWithState />
+        <Shop {...props} getProducts={_getProducts} />
+    </div>
+);
 
 ShopPage.propTypes = {
     shopInfos: PropTypes.object.isRequired,

@@ -19,7 +19,10 @@ const appConfig = _buildAndVerifyConfigFromYml(
     'app',
     Joi.object({
         env: Joi.string().required(),
-        pageTitle: Joi.string().required(),
+        seo: Joi.object({
+            title: Joi.string().required(),
+            description: Joi.string().required(),
+        }),
         api: Joi.object({
             host: Joi.string().required(),
             routes: Joi.object().required(),

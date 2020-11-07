@@ -1,12 +1,11 @@
 import React from 'react';
-import getConfig from 'next/config';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as apiClient from '~/services/api';
 
 import { SignInForm } from '~/components/organisms/forms/SignIn';
 import { Authentication } from '~/components/templates/Authentication';
 import { TheNavBarWithState } from '~/components/organisms/TheNavBar';
+import { Head } from '~/components/atoms/Head';
 
 const SignInPage = () => {
     const router = useRouter();
@@ -18,9 +17,7 @@ const SignInPage = () => {
 
     return (
         <>
-            <Head>
-                <title>Sign in - {getConfig().publicRuntimeConfig.app.pageTitle}</title>
-            </Head>
+            <Head />
 
             <TheNavBarWithState />
             <Authentication>
