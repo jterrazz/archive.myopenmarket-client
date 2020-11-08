@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export interface SignInFormProps {
     submitSignInHandler: (any) => Promise<void>;
@@ -25,9 +26,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ submitSignInHandler }) =
     return (
         <form>
             <div className='text-md-center text-left mb-4'>
-                <h1 className='text--xl'>
-                    Log in to <br /> The Open Market
-                </h1>
+                <h1 className='text--xl'>Log in</h1>
             </div>
             <label className='w-100'>
                 <span className='text--sm font-weight-500'>Email</span>
@@ -55,9 +54,13 @@ export const SignInForm: React.FC<SignInFormProps> = ({ submitSignInHandler }) =
             <button type='submit' className='rounded button--primary button--md mt-2 w-100' onClick={_submitForm}>
                 Log in
             </button>
-            <button className='rounded button--md border-0 bg-gray--light mt-3 w-100'>
-                <span className='text-muted'>Don't have an account ?</span> <span>Sign up</span>
-            </button>
+            <Link href='/signup'>
+                <a>
+                    <button className='rounded button--md border-0 bg-gray--light mt-3 w-100'>
+                        <span className='text-muted'>Don't have an account ?</span> <span>Register</span>
+                    </button>
+                </a>
+            </Link>
         </form>
     );
 };
