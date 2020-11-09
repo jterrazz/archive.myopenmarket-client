@@ -5,6 +5,7 @@ input {
   font-size: 0.92rem;
   transition-duration: $delay !important;
   transition-property: border-bottom-color, border-left-color, border-right-color, border-top-color !important;
+
   &:focus {
     outline: 0 !important;
   }
@@ -41,7 +42,7 @@ input {
 
 // Focus
 
-.input--no-outline:focus{
+.input--no-outline:focus {
   border-color: inherit;
   box-shadow: none;
   outline: none;

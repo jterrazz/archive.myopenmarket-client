@@ -4,6 +4,7 @@ button {
   @extend .rounded;
   font-size: 0.92rem;
   font-weight: 500;
+
   &:focus {
     outline: 0 !important;
   }

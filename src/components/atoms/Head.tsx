@@ -23,7 +23,9 @@ export interface HeadProps {
     };
 }
 
-export const Head: React.FC<HeadProps> = ({ title, description, social }) => {
+export const Head: React.FC<HeadProps | null> = (props = {}) => {
+    const { description, social } = props;
+    let { title } = props;
     title = title
         ? `${title} - ${getConfig().publicRuntimeConfig.app.seo.title}`
         : getConfig().publicRuntimeConfig.app.seo.title;
