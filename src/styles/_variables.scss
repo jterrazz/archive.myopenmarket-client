@@ -1,6 +1,6 @@
 // Sizes
 
-$base-size: 20px;
+$base-size: 16px;
 $border-radius: 6px;
 
 // Times
@@ -23,34 +23,36 @@ $orange-clear: rgb(243, 157, 65);
 $orange: rgb(240, 124, 92);
 $red: rgb(206, 68, 37);
 $grey: rgb(109, 119, 138);
-$black: black;
+$black: rgb(3, 3, 3);
 
 $blue-clearer: rgb(122, 171, 237);
-$blue-clear: rgb(86, 140, 244);
-$blue: rgb(86, 140, 244);
+$blue-clear: rgb(78, 149, 247);
+$blue: rgb(44, 124, 246); // From theme
 $blue-dark: rgb(44, 112, 215);
 $blue-darker: rgb(44, 112, 215);
 
-$gray--lighter: rgb(238, 238, 238);
-$gray--light: rgb(244, 245, 246);
-$gray: rgb(174, 188, 203);
+$gray-lighter: rgb(238, 238, 238);
+$gray-light: rgb(244, 245, 246);
+$gray: #9AA4AF;
 $gray-dark: rgb(116, 129, 145);
 
 // Colors - theme
 
-$primary-clearer: $red;
-$primary-clear: $red;
-$primary: $red;
-$primary-dark: $red;
-$primary-darker: $red;
+$primary-lighter: $blue-clearer;
+$primary-light: $blue-clear;
+$primary: $blue;
+$primary-dark: $blue-dark;
+$primary-darker: $blue-darker;
 
 $secondary-clearer: $red;
-$secondary-clear: $red;
-$secondary: $red;
+$secondary-clear: $purple-clear;
+$secondary: $purple;
 $secondary-dark: $red;
 $secondary-darker: $red;
 
-$text-clearer: rgb(65, 81, 105);
+$text-muted: $gray;
+
+$text-clearer: $gray-lighter;
 $text-clear: rgb(65, 81, 105);
 $text: $black;
 $text-dark: rgb(65, 81, 105);

@@ -6,9 +6,7 @@ import { InDevelopmentMessage } from '~/components/molecules/messages/InDevelopm
 export interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = () => (
-    <main className='container'>
-        <div className='mt-4'>
-            <InDevelopmentMessage />
-        </div>
+    <main className='container py-4'>
+        <InDevelopmentMessage />
     </main>
 );

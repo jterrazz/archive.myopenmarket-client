@@ -25,6 +25,12 @@ a {
   }
 }
 
+ul, li, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .font-weight-500 {
   font-weight: 500;
 }
@@ -41,15 +47,29 @@ a {
   font-size: 1.6rem;
 }
 
-.text--hover-primary {
+.text--red {
   color: red;
 }
+.text-primary-light {
+   color: $primary-light;
+ }
+
+.small {
+  font-size: 0.86rem;
+}
+
 
 // Size
 
-// .x-5em {
-//     width: 5 * $base-size;
-// }
+.size-1 {
+  width: 1 * $base-size;
+  height: 1 * $base-size;
+}
+
+.size-2 {
+  width: 2 * $base-size;
+  height: 2 * $base-size;
+}
 
 // .x-5em {
 //     height: 5 * $base-size;
@@ -60,7 +80,7 @@ a {
 .tag {
   font-size: 0.8rem;
   color: grey;
-  background: $gray--light;
+  background: $gray-light;
   padding: 3px 10px;
   @extend .rounded-pill;
 }

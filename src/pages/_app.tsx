@@ -28,7 +28,7 @@ const App = ({ Component, pageProps }) => (
             }}
         />
         <div className='bg-white vh-100 d-flex flex-column'>
-            <NotificationBar message={_getEnvironmentMessage()} />
+            {/*<NotificationBar message={_getEnvironmentMessage()} />*/}
             <Component {...pageProps} />
         </div>
     </>

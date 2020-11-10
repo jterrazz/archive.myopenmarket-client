@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { GetServerSideProps } from 'next';
 
 import Shop from '../../components/templates/ShopOverview';
-import { TheNavBarWithState } from '~/components/organisms/TheNavBar';
+import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 
 const _getProducts = async (tag) => {
     return [{ name: tag.name }];
@@ -33,10 +33,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 };
 
 const ShopPage = (props) => (
-    <div>
-        <TheNavBarWithState />
+    <TheNavBarContainerWithState>
         <Shop {...props} getProducts={_getProducts} />
-    </div>
+    </TheNavBarContainerWithState>
 );
 
 ShopPage.propTypes = {
