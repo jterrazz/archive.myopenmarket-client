@@ -24,15 +24,15 @@ export interface HeadProps {
 }
 
 export const Head: React.FC<HeadProps | null> = (props = {}) => {
-    const { description, social } = props;
-    let { title } = props;
+    const { social } = props;
+    let { title, description } = props;
     title = title
         ? `${title} - ${getConfig().publicRuntimeConfig.app.seo.title}`
         : getConfig().publicRuntimeConfig.app.seo.title;
+    description = description || getConfig().publicRuntimeConfig.app.seo.description;
     const { type, image, url, siteName, locale } = social || {};
     const socialTitle = (social && social.title) || title;
-    const socialDescription =
-        (social && social.description) || description || getConfig().publicRuntimeConfig.app.seo.description;
+    const socialDescription = (social && social.description) || description;
 
     const renderDescription = () => {
         if (description) {
