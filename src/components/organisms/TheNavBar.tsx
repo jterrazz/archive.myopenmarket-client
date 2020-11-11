@@ -48,10 +48,12 @@ export const TheNavBar = ({ style, className }) => {
         <nav style={style} className={`${className} d-flex flex-column`}>
             <div className='p-4'>
                 {_renderLogo()}
-                <p className='mt-2 small'>A place for merchants and clients</p>
+                <p className='mt-2 small'>Buy with your merchants</p>
             </div>
 
             <div className='overflow-auto flex-fill px-4'>
+                <div className='bg-gray--light rounded small p-2 mb-4 text-muted text-center'>Search</div>
+
                 <div className='pb-4'>
                     <h3 className='text-muted small mb-3 font-weight-500'>Application</h3>
                     <ul className='font-weight-500'>
