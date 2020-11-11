@@ -115,6 +115,10 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) 
                 <Link href='/support'>
                     <a className='small text-muted font-weight-500'>Support</a>
                 </Link>
+
+                <Link href='/' locale='fr'>
+                    <a>To /fr/another</a>
+                </Link>
             </div>
 
             <TheNavBarUserSection user={user} className='p-4 border-top' />

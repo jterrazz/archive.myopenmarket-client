@@ -21,6 +21,7 @@ const App = ({ Component, pageProps }) => (
     <>
         <Head>
             <link rel='icon' href='/favicon.ico' />
+            <link rel='manifest' href='/manifest.webmanifest' />
         </Head>
         <div
             dangerouslySetInnerHTML={{
