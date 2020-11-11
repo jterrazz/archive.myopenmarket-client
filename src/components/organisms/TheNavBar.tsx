@@ -122,7 +122,7 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) 
     );
 };
 
-export const TheNavBarContainer = ({ children, user }) => {
+export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user }) => {
     const NAVBAR_WIDTH = 270;
 
     return (

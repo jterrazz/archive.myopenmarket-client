@@ -2,7 +2,7 @@ app:
   env: 'development'
   seo:
     title: 'The Open Market'
-    description: 'Buy directly with real commerces, sell directly to your customers'
+    description: 'A community of buyers and sellers with no intermediary'
   router:
     home: '/'
     discover: '/discover'
