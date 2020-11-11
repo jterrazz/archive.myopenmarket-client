@@ -7,6 +7,7 @@ export interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = () => (
     <main className='container py-4'>
-        <InDevelopmentMessage />
+        {/*<InDevelopmentMessage />*/}
+        {/*<InDevelopmentMessage />*/}
     </main>
 );

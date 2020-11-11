@@ -28,6 +28,7 @@ const appConfig = _buildAndVerifyConfigFromYml(
             routes: Joi.object().required(),
         }),
         router: Joi.object().required(),
+        assets: Joi.object().required(),
     }).required(),
 );
 
