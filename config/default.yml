@@ -19,3 +19,5 @@ app:
         signUp: '/auth/signup'
       me:
         get: '/me'
+  assets:
+    profile: '/images/user-profile.svg'

@@ -5,7 +5,7 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 
 import { TheNavBarLinkWithImageProps, TheNavBarLinkWithImage } from '~/components/atoms/navbar/TheNavbarLinkWithImage';
-import { TheNavBarUserSection, TheNavBarUserSectionProps } from '~/components/molecules/navbar/TheNavBarUserSection';
+import { TheNavBarUserSection, TheNavBarUserProps } from '~/components/molecules/navbar/TheNavBarUserSection';
 import { TheNavBarGroup } from '~/components/molecules/navbar/TheNavBarGroup';
 
 const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
@@ -64,7 +64,7 @@ export interface TheNavBarProps {
     className?: string;
     children?: ReactChild;
     style?: any;
-    user?: TheNavBarUserSectionProps;
+    user?: TheNavBarUserProps;
 }
 
 export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) => {
@@ -117,7 +117,7 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) 
                 </Link>
             </div>
 
-            <TheNavBarUserSection {...user} className='p-4 border-top' />
+            <TheNavBarUserSection user={user} className='p-4 border-top' />
         </nav>
     );
 };
@@ -138,10 +138,10 @@ export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user })
 };
 
 export const TheNavBarContainerWithState = ({ children }) => {
-    const authenticatedUser = null;
-    // const authenticatedUser = {
-    //     name: 42,
-    // };
+    // const authenticatedUser = null;
+    const authenticatedUser: TheNavBarUserProps = {
+        name: 'Jean-Baptiste',
+    };
 
     return <TheNavBarContainer user={authenticatedUser}>{children}</TheNavBarContainer>;
 };
