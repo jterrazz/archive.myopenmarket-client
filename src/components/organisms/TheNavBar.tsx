@@ -1,5 +1,8 @@
 import React, { ReactChild } from 'react';
 import Link from 'next/link';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 import { TheNavBarLinkWithImageProps, TheNavBarLinkWithImage } from '~/components/atoms/navbar/TheNavbarLinkWithImage';
 import { TheNavBarUserSection } from '~/components/molecules/navbar/TheNavBarUserSection';
@@ -8,7 +11,7 @@ import { TheNavBarGroup } from '~/components/molecules/navbar/TheNavBarGroup';
 const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
     {
         router: {
-            pathname: '/',
+            pathname: publicRuntimeConfig.app.router.home,
         },
         title: 'Home',
         imageSource: {
@@ -18,7 +21,7 @@ const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
     },
     {
         router: {
-            pathname: '/discover',
+            pathname: publicRuntimeConfig.app.router.discover,
         },
         title: 'Discover',
         imageSource: {
@@ -31,7 +34,7 @@ const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
 const STORE_LINKS: Array<TheNavBarLinkWithImageProps> = [
     {
         router: {
-            pathname: '/store/[id]',
+            pathname: publicRuntimeConfig.app.router.store,
             query: {
                 id: '12',
             },
@@ -44,7 +47,7 @@ const STORE_LINKS: Array<TheNavBarLinkWithImageProps> = [
     },
     {
         router: {
-            pathname: '/store/[id]',
+            pathname: publicRuntimeConfig.app.router.store,
             query: {
                 id: '34',
             },

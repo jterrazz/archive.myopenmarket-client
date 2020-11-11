@@ -14,6 +14,7 @@ export const TheNavBarUserSection: React.FC<TheNavBarUserSectionProps> = ({ user
             <img src='/images/user-profile.svg' className='size-2 mr-2' />
             <div className='text-muted'>My name</div>
         </div>
+
         // <>
         //     <Link href='/support'>
         //         <a>

@@ -4,10 +4,13 @@ app:
     title: 'The Open Market'
     description: 'Buy directly with real commerces, sell directly to your customers'
   router:
+    home: '/'
+    discover: '/discover'
     authentication:
       signIn: '/signin'
       signUp: '/signup'
-    search: '/search'
+    search: '/search/[query]'
+    store: '/store/[id]'
   api:
     routes:
       state: '/'

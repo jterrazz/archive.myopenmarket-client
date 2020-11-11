@@ -8,7 +8,6 @@ import { Head, HeadProps } from '~/components/atoms/Head';
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const head: HeadProps = {
         title: 'Home',
-        social: {},
     };
 
     return {
