@@ -5,7 +5,7 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 
 import { TheNavBarLinkWithImageProps, TheNavBarLinkWithImage } from '~/components/atoms/navbar/TheNavbarLinkWithImage';
-import { TheNavBarUserSection } from '~/components/molecules/navbar/TheNavBarUserSection';
+import { TheNavBarUserSection, TheNavBarUserSectionProps } from '~/components/molecules/navbar/TheNavBarUserSection';
 import { TheNavBarGroup } from '~/components/molecules/navbar/TheNavBarGroup';
 
 const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
@@ -64,9 +64,10 @@ export interface TheNavBarProps {
     className?: string;
     children?: ReactChild;
     style?: any;
+    user?: TheNavBarUserSectionProps;
 }
 
-export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className }) => {
+export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) => {
     const _renderTitleSection = () => (
         <div className='p-4'>
             <Link href='/'>
@@ -110,28 +111,37 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className }) => {
                         <li className='my-1 text-muted small'>#food</li>
                     </ul>
                 </TheNavBarGroup>
+
+                <Link href='/support'>
+                    <a className='small text-muted font-weight-500'>Support</a>
+                </Link>
             </div>
 
-            <TheNavBarUserSection className='p-4 border-top' />
+            <TheNavBarUserSection {...user} className='p-4 border-top' />
         </nav>
     );
 };
 
-export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children }) => {
+export const TheNavBarContainer = ({ children, user }) => {
     const NAVBAR_WIDTH = 270;
 
     return (
         <div className='position-relative vh-100'>
-            <TheNavBar style={{ width: NAVBAR_WIDTH, top: 0, bottom: 0 }} className='border-right position-fixed' />
+            <TheNavBar
+                user={user}
+                style={{ width: NAVBAR_WIDTH, top: 0, bottom: 0 }}
+                className='border-right position-fixed'
+            />
             <div style={{ marginLeft: NAVBAR_WIDTH }}>{children}</div>
         </div>
     );
 };
 
 export const TheNavBarContainerWithState = ({ children }) => {
+    const authenticatedUser = null;
     // const authenticatedUser = {
-    //     id: 42,
+    //     name: 42,
     // };
 
-    return <TheNavBarContainer>{children}</TheNavBarContainer>;
+    return <TheNavBarContainer user={authenticatedUser}>{children}</TheNavBarContainer>;
 };
