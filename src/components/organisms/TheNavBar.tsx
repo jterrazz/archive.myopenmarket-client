@@ -1,120 +1,120 @@
 import React, { ReactChild } from 'react';
 import Link from 'next/link';
 
-import SearchBar from '~/components/molecules/SearchBar';
-import Router from 'next/router';
-import getConfig from 'next/config';
+import { TheNavBarLinkWithImageProps, TheNavBarLinkWithImage } from '~/components/atoms/navbar/TheNavbarLinkWithImage';
+import { TheNavBarUserSection } from '~/components/molecules/navbar/TheNavBarUserSection';
+import { TheNavBarGroup } from '~/components/molecules/navbar/TheNavBarGroup';
 
-export const TheNavBar = ({ style, className }) => {
-    const _renderLogo = () => {
-        return (
-            <div className='d-flex x'>
-                <Link href='/'>
-                    <a>
-                        <div className='font-weight-bold'>
-                            <span className='bg-dark p-1 text-white'>OPEN</span> MARKET
-                        </div>
-                    </a>
-                </Link>
-            </div>
-        );
-    };
+const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
+    {
+        router: {
+            pathname: '/',
+        },
+        title: 'Home',
+        imageSource: {
+            active: '/images/icons8-work-from-home-48.active.png',
+            default: '/images/icons8-work-from-home-48.png',
+        },
+    },
+    {
+        router: {
+            pathname: '/discover',
+        },
+        title: 'Discover',
+        imageSource: {
+            active: '/images/icons8-compass-north-48.active.png',
+            default: '/images/icons8-compass-north-48.png',
+        },
+    },
+];
 
-    const _renderAuthenticationSection = () => {
-        return (
-            <>
-                <Link href='/support'>
-                    <a>
-                        <button className='button--light'>Support</button>
-                    </a>
-                </Link>
-                <Link href='/signin'>
-                    <a>
-                        <button className='button--light'>Log in</button>
-                    </a>
-                </Link>
-                <Link href='/signup'>
-                    <a>
-                        <button className='button--primary'>Sign up</button>
-                    </a>
-                </Link>
-            </>
-        );
-    };
+const STORE_LINKS: Array<TheNavBarLinkWithImageProps> = [
+    {
+        router: {
+            pathname: '/store/[id]',
+            query: {
+                id: '12',
+            },
+        },
+        title: 'Carrefour',
+        imageSource: {
+            active: '/images/user-profile.svg',
+            default: '/images/user-profile.svg',
+        },
+    },
+    {
+        router: {
+            pathname: '/store/[id]',
+            query: {
+                id: '34',
+            },
+        },
+        title: 'Post malone',
+        imageSource: {
+            active: '/images/user-profile.svg',
+            default: '/images/user-profile.svg',
+        },
+    },
+];
 
-    const LOGO_SIZE = 19;
+export interface TheNavBarProps {
+    className?: string;
+    children?: ReactChild;
+    style?: any;
+}
+
+export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className }) => {
+    const _renderTitleSection = () => (
+        <div className='p-4'>
+            <Link href='/'>
+                <a>
+                    <div className='font-weight-bold'>
+                        <span className='bg-dark p-1 text-white'>OPEN</span> MARKET
+                    </div>
+                </a>
+            </Link>
+            <p className='mt-2 small'>Buy with your merchants</p>
+        </div>
+    );
 
     return (
         <nav style={style} className={`${className} d-flex flex-column`}>
-            <div className='p-4'>
-                {_renderLogo()}
-                <p className='mt-2 small'>Buy with your merchants</p>
-            </div>
+            {_renderTitleSection()}
 
             <div className='overflow-auto flex-fill px-4'>
                 <div className='bg-gray--light rounded small p-2 mb-4 text-muted text-center'>Search</div>
 
-                <div className='pb-4'>
-                    <h3 className='text-muted small mb-3 font-weight-500'>Application</h3>
+                <TheNavBarGroup className='pb-4' title='Application'>
                     <ul className='font-weight-500'>
-                        <Link href='/'>
-                            <a>
-                                <li className='text-primary-light my-1 d-flex align-items-center'>
-                                    <img
-                                        src='/images/icons8-home.svg'
-                                        style={{ height: LOGO_SIZE, width: LOGO_SIZE, marginTop: -1 }}
-                                        alt='home logo'
-                                    />
-                                    <div className='ml-2'>Home</div>
-                                </li>
-                            </a>
-                        </Link>
-                        <Link href='/discover'>
-                            <a>
-                                <li className='my-1 d-flex align-items-center'>
-                                    <img
-                                        src='/images/icons8-compass-24.png'
-                                        style={{ height: LOGO_SIZE, width: LOGO_SIZE, marginTop: -1 }}
-                                        alt='home logo'
-                                    />
-                                    <div className='ml-2'>Discover</div>
-                                </li>
-                            </a>
-                        </Link>
+                        {APPLICATION_LINKS.map((link) => (
+                            <TheNavBarLinkWithImage key={JSON.stringify(link.router)} {...link} />
+                        ))}
                     </ul>
-                </div>
+                </TheNavBarGroup>
 
-                <div className='py-4'>
-                    <h3 className='text-muted small mb-3 font-weight-500'>Stores</h3>
-                    <ul className='font-weight-500'>
-                        <li className='my-1'>Blyat</li>
-                        <li className='my-1'>Blyat 2</li>
+                <TheNavBarGroup className='py-4 font-weight-500' title='Stores'>
+                    <ul>
+                        {STORE_LINKS.map((link) => (
+                            <TheNavBarLinkWithImage key={JSON.stringify(link.router)} {...link} />
+                        ))}
                     </ul>
-                </div>
+                </TheNavBarGroup>
 
-                <div className='py-4'>
-                    <h3 className='text-muted small mb-3 font-weight-500'>Tags / Categories</h3>
+                <TheNavBarGroup className='py-4' title='Tags / Categories'>
                     <ul>
                         <li className='my-1 text-muted small'>#electronics</li>
                         <li className='my-1 text-muted small'>#apple</li>
                         <li className='my-1 text-muted small'>#food</li>
                     </ul>
-                </div>
+                </TheNavBarGroup>
             </div>
 
-            <div className='d-flex align-items-center p-4 border-top'>
-                <img src='/images/user-profile.svg' className='size-2 mr-2' />
-                <div className='text-muted'>My name</div>
-            </div>
+            <TheNavBarUserSection className='p-4 border-top' />
         </nav>
     );
 };
 
-export interface TheNavBarContainerProps {
-    children: ReactChild;
-}
-
-export const TheNavBarContainer: React.FC<TheNavBarContainerProps> = ({ children }) => {
+export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children }) => {
     const NAVBAR_WIDTH = 270;
 
     return (
@@ -128,14 +128,6 @@ export const TheNavBarContainer: React.FC<TheNavBarContainerProps> = ({ children
 export const TheNavBarContainerWithState = ({ children }) => {
     // const authenticatedUser = {
     //     id: 42,
-    // };
-    //
-    // // TODO Move to a more general location, to eventually share it with other search bars
-    // const _searchProduct = async (searchedValue: string) => {
-    //     await Router.push({
-    //         pathname: getConfig().publicRuntimeConfig.app.router.search,
-    //         query: { q: searchedValue },
-    //     });
     // };
 
     return <TheNavBarContainer>{children}</TheNavBarContainer>;
