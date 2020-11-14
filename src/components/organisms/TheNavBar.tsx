@@ -1,6 +1,7 @@
 import React, { ReactChild } from 'react';
 import Link from 'next/link';
 import getConfig from 'next/config';
+import { withTranslation } from '~/services/i18n';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -8,12 +9,12 @@ import { TheNavBarLinkWithImageProps, TheNavBarLinkWithImage } from '~/component
 import { TheNavBarUserSection, TheNavBarUserProps } from '~/components/molecules/navbar/TheNavBarUserSection';
 import { TheNavBarGroup } from '~/components/molecules/navbar/TheNavBarGroup';
 
-const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
+const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t) => [
     {
         router: {
             pathname: publicRuntimeConfig.app.router.home,
         },
-        title: 'Home',
+        title: t('home'),
         imageSource: {
             active: '/images/icons8-work-from-home-48.active.png',
             default: '/images/icons8-work-from-home-48.png',
@@ -23,7 +24,7 @@ const APPLICATION_LINKS: Array<TheNavBarLinkWithImageProps> = [
         router: {
             pathname: publicRuntimeConfig.app.router.discover,
         },
-        title: 'Discover',
+        title: t('discover'),
         imageSource: {
             active: '/images/icons8-compass-north-48.active.png',
             default: '/images/icons8-compass-north-48.png',
@@ -65,9 +66,10 @@ export interface TheNavBarProps {
     children?: ReactChild;
     style?: any;
     user?: TheNavBarUserProps;
+    t?: any;
 }
 
-export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) => {
+export const TheNavBarComponent: React.FC<TheNavBarProps> = ({ style, className, user, t }) => {
     const _renderTitleSection = () => (
         <div className='p-4'>
             <Link href='/'>
@@ -88,15 +90,15 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) 
             <div className='overflow-auto flex-fill px-4'>
                 <div className='bg-gray--light rounded small p-2 mb-4 text-muted text-center'>Search</div>
 
-                <TheNavBarGroup className='pb-4' title='Application'>
+                <TheNavBarGroup className='pb-4' title={t('group-title-application')}>
                     <ul className='font-weight-500'>
-                        {APPLICATION_LINKS.map((link) => (
+                        {APPLICATION_LINKS(t).map((link) => (
                             <TheNavBarLinkWithImage key={JSON.stringify(link.router)} {...link} />
                         ))}
                     </ul>
                 </TheNavBarGroup>
 
-                <TheNavBarGroup className='py-4 font-weight-500' title='Stores'>
+                <TheNavBarGroup className='py-4 font-weight-500' title={t('group-title-stores')}>
                     <ul>
                         {STORE_LINKS.map((link) => (
                             <TheNavBarLinkWithImage key={JSON.stringify(link.router)} {...link} />
@@ -104,7 +106,7 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) 
                     </ul>
                 </TheNavBarGroup>
 
-                <TheNavBarGroup className='py-4' title='Tags / Categories'>
+                <TheNavBarGroup className='py-4' title={t('group-title-categories')}>
                     <ul>
                         <li className='my-1 text-muted small'>#electronics</li>
                         <li className='my-1 text-muted small'>#apple</li>
@@ -125,6 +127,8 @@ export const TheNavBar: React.FC<TheNavBarProps> = ({ style, className, user }) 
         </nav>
     );
 };
+
+export const TheNavBar = withTranslation('navigation')(TheNavBarComponent);
 
 export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user }) => {
     const NAVBAR_WIDTH = 270;

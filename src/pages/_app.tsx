@@ -1,14 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import getConfig from 'next/config';
+import dynamic from 'next/dynamic';
 
 import '~/styles/global.scss';
-import { NotificationBar } from '~/components/molecules/NotificationBar';
+import { appWithTranslation } from '../services/i18n';
 
-const environment = getConfig().publicRuntimeConfig.app.env;
+const CrispWithNoSSR = dynamic(() => import('../components/organisms/Crisp'), { ssr: false });
+
+export interface ApplicationProps {
+    Component: any;
+    pageProps: any;
+}
 
 const _getEnvironmentMessage = (): string => {
+    const environment = getConfig().publicRuntimeConfig.app.env;
+
     const environmentMessages = {
         development: 'Development environment',
         staging: 'Staging environment',
@@ -17,7 +24,7 @@ const _getEnvironmentMessage = (): string => {
     return environmentMessages[environment];
 };
 
-const App = ({ Component, pageProps }) => (
+const App: React.FC<ApplicationProps> = ({ Component, pageProps }) => (
     <>
         <Head>
             <link rel='icon' href='/favicon.ico' />
@@ -28,6 +35,7 @@ const App = ({ Component, pageProps }) => (
                 __html: '<!-- https://www.youtube.com/watch?v=oHg5SJYRHA0 -->',
             }}
         />
+        <CrispWithNoSSR />
         <div className='bg-white vh-100 d-flex flex-column'>
             {/*<NotificationBar message={_getEnvironmentMessage()} />*/}
             <Component {...pageProps} />
@@ -35,9 +43,4 @@ const App = ({ Component, pageProps }) => (
     </>
 );
 
-App.propTypes = {
-    Component: PropTypes.func,
-    pageProps: PropTypes.object,
-};
-
-export default App;
+export default appWithTranslation(App);

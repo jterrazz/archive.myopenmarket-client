@@ -47,8 +47,4 @@ module.exports = {
         version: packageJson.version,
         app: appConfig,
     },
-    i18n: {
-        locales: ['en', 'fr'],
-        defaultLocale: 'en',
-    },
 };
