@@ -1,6 +1,7 @@
 import React, { ReactChild } from 'react';
 import Link from 'next/link';
 import getConfig from 'next/config';
+import { TFunction } from 'next-i18next';
 import { withTranslation } from '~/services/i18n';
 
 const { publicRuntimeConfig } = getConfig();
@@ -9,7 +10,7 @@ import { TheNavBarLinkWithImageProps, TheNavBarLinkWithImage } from '~/component
 import { TheNavBarUserSection, TheNavBarUserProps } from '~/components/molecules/navbar/TheNavBarUserSection';
 import { TheNavBarGroup } from '~/components/molecules/navbar/TheNavBarGroup';
 
-const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t) => [
+const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t: TFunction) => [
     {
         router: {
             pathname: publicRuntimeConfig.app.router.home,
@@ -66,7 +67,7 @@ export interface TheNavBarProps {
     children?: ReactChild;
     style?: any;
     user?: TheNavBarUserProps;
-    t?: any;
+    t?: TFunction;
 }
 
 export const TheNavBarComponent: React.FC<TheNavBarProps> = ({ style, className, user, t }) => {
@@ -128,6 +129,7 @@ export const TheNavBarComponent: React.FC<TheNavBarProps> = ({ style, className,
     );
 };
 
+// @ts-ignore
 export const TheNavBar = withTranslation('navigation')(TheNavBarComponent);
 
 export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user }) => {
@@ -136,6 +138,7 @@ export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user })
     return (
         <div className='position-relative vh-100'>
             <TheNavBar
+                // @ts-ignore
                 user={user}
                 style={{ width: NAVBAR_WIDTH, top: 0, bottom: 0 }}
                 className='border-right position-fixed'

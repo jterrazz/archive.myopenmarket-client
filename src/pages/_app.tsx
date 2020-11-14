@@ -4,7 +4,7 @@ import getConfig from 'next/config';
 import dynamic from 'next/dynamic';
 
 import '~/styles/global.scss';
-import { appWithTranslation } from '../services/i18n';
+import { appWithTranslation } from '~/services/i18n';
 
 const CrispWithNoSSR = dynamic(() => import('../components/organisms/Crisp'), { ssr: false });
 
