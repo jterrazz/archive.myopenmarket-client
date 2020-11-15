@@ -5,5 +5,10 @@ export interface NotificationBarProps {
 }
 
 export const NotificationBar: React.FC<NotificationBarProps> = ({ message }) => (
-    <div className='w-100 bg-blue--dark text-white text-center small p-2'>{message}</div>
+    <div
+        className='position-fixed w-100 bg-primary text-white small d-flex align-items-center justify-content-center'
+        style={{ zIndex: 99, height: 36 }}
+    >
+        {message}
+    </div>
 );

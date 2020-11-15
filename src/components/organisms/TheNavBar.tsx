@@ -136,14 +136,14 @@ export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user })
     const NAVBAR_WIDTH = 270;
 
     return (
-        <div className='position-relative vh-100'>
+        <div>
             <TheNavBar
                 // @ts-ignore
                 user={user}
-                style={{ width: NAVBAR_WIDTH, top: 0, bottom: 0 }}
+                style={{ width: NAVBAR_WIDTH, top: 36, bottom: 0 }}
                 className='border-right position-fixed'
             />
-            <div style={{ marginLeft: NAVBAR_WIDTH }}>{children}</div>
+            <div style={{ marginLeft: NAVBAR_WIDTH, paddingTop: 36 }}>{children}</div>
         </div>
     );
 };

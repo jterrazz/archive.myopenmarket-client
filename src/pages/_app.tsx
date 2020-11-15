@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 
 import '~/styles/global.scss';
 import { appWithTranslation } from '~/services/i18n';
+import { NotificationBar } from '~/components/molecules/NotificationBar';
 
 const CrispWithNoSSR = dynamic(() => import('../components/organisms/Crisp'), { ssr: false });
 
@@ -36,9 +37,11 @@ const App: React.FC<ApplicationProps> = ({ Component, pageProps }) => (
             }}
         />
         <CrispWithNoSSR />
-        <div className='bg-white vh-100 d-flex flex-column'>
-            {/*<NotificationBar message={_getEnvironmentMessage()} />*/}
-            <Component {...pageProps} />
+        <div className='bg-white vh-100 vw-100 d-flex flex-column'>
+            <NotificationBar message={_getEnvironmentMessage()} />
+            <div className='flex-fill position-relative'>
+                <Component {...pageProps} />
+            </div>
         </div>
     </>
 );

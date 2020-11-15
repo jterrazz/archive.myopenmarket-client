@@ -1,16 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 
 import Shop from '../../components/templates/ShopOverview';
 import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
+import { Head, HeadProps } from '~/components/atoms/Head';
 
 const _getProducts = async (tag) => {
     return [{ name: tag.name }];
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const shopInfos = {
+    const shop = {
         name: 'ok',
         description: 'efef',
         photoUrl: 'https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png',
@@ -21,25 +21,22 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
             { name: 'tag2', count: 23 },
         ],
     };
-    let selectedTagIndex = shopInfos.productTags.findIndex((p) => p.name == ctx.query.tag);
+    let selectedTagIndex = shop.productTags.findIndex((p) => p.name == ctx.query.tag);
     if (selectedTagIndex === -1) selectedTagIndex = 0;
 
     return {
         props: {
-            shopInfos,
-            defaultProducts: await _getProducts(shopInfos.productTags[selectedTagIndex]),
+            shop,
+            defaultProducts: await _getProducts(shop.productTags[selectedTagIndex]),
         },
     };
 };
 
-const ShopPage = (props) => (
+const ShopPage = ({ head, shop }) => (
     <TheNavBarContainerWithState>
-        <Shop {...props} getProducts={_getProducts} />
+        <Head {...head} />
+        {/*<Shop {...shop} getProducts={_getProducts} />*/}
     </TheNavBarContainerWithState>
 );
-
-ShopPage.propTypes = {
-    shopInfos: PropTypes.object.isRequired,
-};
 
 export default ShopPage;

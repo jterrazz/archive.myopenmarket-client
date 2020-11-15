@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Authentication } from '~/components/templates/Authentication';
 import { SignUpForm } from '~/components/organisms/forms/SignUp';
 import * as apiClient from '~/services/api';
-import { TheNavBarContainer } from '~/components/organisms/TheNavBar';
+import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 
 const SignUpPage = () => {
     const router = useRouter();
@@ -22,11 +22,11 @@ const SignUpPage = () => {
                 <title>Sign in - {getConfig().publicRuntimeConfig.app.pageTitle}</title>
             </Head>
 
-            <TheNavBarContainer>
+            <TheNavBarContainerWithState>
                 <Authentication>
                     <SignUpForm submitSignUpHandler={_submitSignUpHandler} />
                 </Authentication>
-            </TheNavBarContainer>
+            </TheNavBarContainerWithState>
         </>
     );
 };
