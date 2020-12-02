@@ -17,8 +17,8 @@ const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t: TFunc
         },
         title: t('home'),
         imageSource: {
-            active: '/images/home-8---filled(24x24)-active@2x.svg',
-            default: '/images/home-8---filled(24x24)@2x.svg',
+            active: '/images/home-4---filled(48x48)-active@2x.svg',
+            default: '/images/home-4---filled(48x48)@2x.svg',
         },
     },
     {
@@ -27,8 +27,8 @@ const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t: TFunc
         },
         title: t('discover'),
         imageSource: {
-            active: '/images/compass---filled(24x24)-active@2x.svg',
-            default: '/images/compass---filled(24x24)@2x.svg',
+            active: '/images/compass---filled(48x48)-active@2x.svg',
+            default: '/images/compass---filled(48x48)@2x.svg',
         },
     },
 ];

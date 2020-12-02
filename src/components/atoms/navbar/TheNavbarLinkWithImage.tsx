@@ -17,7 +17,7 @@ export interface TheNavBarLinkWithImageProps {
 
 export const TheNavBarLinkWithImage: React.FC<TheNavBarLinkWithImageProps> = ({ title, router, imageSource }) => {
     const pageRouter = useRouter();
-    const LOGO_SIZE = 20;
+    const LOGO_SIZE = 22;
 
     const isSamePathname = pageRouter.pathname === router.pathname;
     const isSameQuery = JSON.stringify(pageRouter.query) === JSON.stringify(router.query || {});
@@ -26,7 +26,7 @@ export const TheNavBarLinkWithImage: React.FC<TheNavBarLinkWithImageProps> = ({ 
     return (
         <Link href={router}>
             <a>
-                <li className={'my-1 d-flex align-items-center ' + (isActive ? 'text-primary-light' : '')}>
+                <li className={'my-2 d-flex align-items-center ' + (isActive ? 'text-primary-light' : '')}>
                     <div
                         style={{ height: LOGO_SIZE, width: LOGO_SIZE, marginTop: -1 }}
                         className='d-flex align-items-center justify-content-center'
