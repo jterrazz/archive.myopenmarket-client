@@ -84,6 +84,11 @@ ul, li, ol {
   height: 2 * $base-size;
 }
 
+.size-3 {
+  width: 3 * $base-size;
+  height: 3 * $base-size;
+}
+
 // .x-5em {
 //     height: 5 * $base-size;
 // }

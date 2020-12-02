@@ -7,7 +7,7 @@ import { ProductCarousel } from '~/components/organisms/ProductCarousel';
 export interface HomeProps {}
 
 const shop = {
-    image: '/images/user-profile.svg',
+    image: '/images/restaurant(48x48)@2x.svg',
     name: 'The first market',
 };
 

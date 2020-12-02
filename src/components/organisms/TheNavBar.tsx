@@ -17,8 +17,8 @@ const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t: TFunc
         },
         title: t('home'),
         imageSource: {
-            active: '/images/icons8-work-from-home-48.active.png',
-            default: '/images/icons8-work-from-home-48.png',
+            active: '/images/home-8---filled(24x24)-active@2x.svg',
+            default: '/images/home-8---filled(24x24)@2x.svg',
         },
     },
     {
@@ -27,8 +27,8 @@ const APPLICATION_LINKS: (any) => Array<TheNavBarLinkWithImageProps> = (t: TFunc
         },
         title: t('discover'),
         imageSource: {
-            active: '/images/icons8-compass-north-48.active.png',
-            default: '/images/icons8-compass-north-48.png',
+            active: '/images/compass---filled(24x24)-active@2x.svg',
+            default: '/images/compass---filled(24x24)@2x.svg',
         },
     },
 ];
@@ -80,7 +80,7 @@ export const TheNavBarComponent: React.FC<TheNavBarProps> = ({ style, className,
                     </div>
                 </a>
             </Link>
-            <p className='mt-2 small'>Buy with your merchants</p>
+            <p className='mt-2 small'>Commerce with you</p>
         </div>
     );
 
@@ -118,10 +118,6 @@ export const TheNavBarComponent: React.FC<TheNavBarProps> = ({ style, className,
                 <Link href='/support'>
                     <a className='small text-muted font-weight-500'>Support</a>
                 </Link>
-
-                <Link href='/' locale='fr'>
-                    <a>To /fr/another</a>
-                </Link>
             </div>
 
             <TheNavBarUserSection user={user} className='p-4 border-top' />
@@ -137,13 +133,17 @@ export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user })
 
     return (
         <div>
-            <TheNavBar
-                // @ts-ignore
-                user={user}
-                style={{ width: NAVBAR_WIDTH, top: 36, bottom: 0 }}
-                className='border-right position-fixed'
-            />
-            <div style={{ marginLeft: NAVBAR_WIDTH, paddingTop: 36 }}>{children}</div>
+            <div className='d-none d-lg-block'>
+                <TheNavBar
+                    // @ts-ignore
+                    user={user}
+                    style={{ width: NAVBAR_WIDTH, top: 36, bottom: 0 }}
+                    className='border-right position-fixed'
+                />
+                <div style={{ marginLeft: NAVBAR_WIDTH, paddingTop: 36 }}>{children}</div>
+            </div>
+
+            <div className='d-block d-lg-none'>{children}</div>
         </div>
     );
 };

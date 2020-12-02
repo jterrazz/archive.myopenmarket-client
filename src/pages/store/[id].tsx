@@ -35,6 +35,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 const ShopPage = ({ head, shop }) => (
     <TheNavBarContainerWithState>
         <Head {...head} />
+        {JSON.stringify(shop)}
         {/*<Shop {...shop} getProducts={_getProducts} />*/}
     </TheNavBarContainerWithState>
 );

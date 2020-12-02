@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export interface ProductCarouselProps {
     shop: any; // TODO Replace by store obj
@@ -7,12 +8,18 @@ export interface ProductCarouselProps {
 
 export const ProductCarousel: React.FC<ProductCarouselProps> = ({ shop, products }) => (
     <main className='container py-4'>
-        <div className='d-flex align-items-center mb-3'>
-            <img src={shop.image} alt={shop.name} className='size-2' />
-            <div className='small text-muted mx-3'>{shop.name}</div>
-            <span className='text-muted'>/</span>
-            <div className='mx-3'>New products / Buy again / Similar / You might like / Popular / List XYZ / Promo</div>
-        </div>
+        <Link href='/store/34'>
+            <a>
+                <div className='d-flex align-items-center mb-3'>
+                    <img src={shop.image} alt={shop.name} className='size-2' />
+                    <div className='d-flex align-items-baseline flex-column flex-lg-row'>
+                        <div className='small text-muted mx-3'>{shop.name}</div>
+                        <span className='text-muted d-none d-lg-block'>/</span>
+                        <div className='mx-3'>Added new products</div>
+                    </div>
+                </div>
+            </a>
+        </Link>
 
         <div className='shadow-md d-flex flex-column rounded overflow-hidden' style={{ width: 280, height: 380 }}>
             <div className='p-3 flex-fill d-flex flex-column'>

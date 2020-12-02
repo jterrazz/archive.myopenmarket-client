@@ -41,6 +41,10 @@ export const TheNavBarUserSection: React.FC<TheNavBarUserSectionProps> = ({ user
         <div className={'d-flex align-items-center ' + className}>
             <img src={user.imageSource} className='size-2 mr-2' />
             <div className='text-muted'>{user.name}</div>
+
+            <Link href='/' locale='fr'>
+                <a>To /fr/another</a>
+            </Link>
         </div>
     );
 
