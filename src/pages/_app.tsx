@@ -7,6 +7,8 @@ import '~/styles/global.scss';
 import { appWithTranslation } from '~/services/i18n';
 import { NotificationBar } from '~/components/molecules/NotificationBar';
 
+// https://www.favicon-generator.org/
+
 const CrispWithNoSSR = dynamic(() => import('../components/organisms/Crisp'), { ssr: false });
 
 export interface ApplicationProps {
