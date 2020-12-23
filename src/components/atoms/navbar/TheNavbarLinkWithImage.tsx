@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 
 export interface TheNavBarLinkWithImageProps {
     title: string;
@@ -31,12 +30,10 @@ export const TheNavBarLinkWithImage: React.FC<TheNavBarLinkWithImageProps> = ({ 
                         style={{ height: LOGO_SIZE, width: LOGO_SIZE, marginTop: -1 }}
                         className='d-flex align-items-center justify-content-center'
                     >
-                        <Image
+                        <img
                             src={isActive ? imageSource.active : imageSource.default}
-                            // className='w-100'
                             width={LOGO_SIZE}
                             height={LOGO_SIZE}
-                            layout='intrinsic'
                             alt={title}
                         />
                     </div>

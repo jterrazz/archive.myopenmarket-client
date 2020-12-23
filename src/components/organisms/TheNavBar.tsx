@@ -137,10 +137,10 @@ export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user })
                 <TheNavBar
                     // @ts-ignore
                     user={user}
-                    style={{ width: NAVBAR_WIDTH, top: 36, bottom: 0 }}
+                    style={{ width: NAVBAR_WIDTH, top: 0, bottom: 0 }}
                     className='border-right position-fixed'
                 />
-                <div style={{ marginLeft: NAVBAR_WIDTH, paddingTop: 36 }}>{children}</div>
+                <div style={{ marginLeft: NAVBAR_WIDTH }}>{children}</div>
             </div>
 
             <div className='d-block d-lg-none'>{children}</div>

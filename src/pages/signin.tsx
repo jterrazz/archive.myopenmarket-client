@@ -4,7 +4,6 @@ import * as apiClient from '~/services/api';
 
 import { SignInForm } from '~/components/organisms/forms/SignIn';
 import { Authentication } from '~/components/templates/Authentication';
-import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 import { Head } from '~/components/atoms/Head';
 
 const SignInPage = () => {
@@ -19,11 +18,9 @@ const SignInPage = () => {
         <>
             <Head />
 
-            <TheNavBarContainerWithState>
-                <Authentication>
-                    <SignInForm submitSignInHandler={_submitSignInHandler} />
-                </Authentication>
-            </TheNavBarContainerWithState>
+            <Authentication>
+                <SignInForm submitSignInHandler={_submitSignInHandler} />
+            </Authentication>
         </>
     );
 };

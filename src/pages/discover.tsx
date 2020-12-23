@@ -2,12 +2,11 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 
 import { Home } from '~/components/templates/Home';
-import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 import { Head, HeadProps } from '~/components/atoms/Head';
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const head: HeadProps = {
-        title: 'Discover',
+        title: 'Discover - The best products and store',
         social: {},
     };
 
@@ -18,16 +17,14 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     };
 };
 
-const HomePage = ({ head }) => {
+const DiscoverPage = ({ head }) => {
     return (
         <div>
             <Head {...head} />
 
-            <TheNavBarContainerWithState>
-                <Home />
-            </TheNavBarContainerWithState>
+            <Home />
         </div>
     );
 };
 
-export default HomePage;
+export default DiscoverPage;

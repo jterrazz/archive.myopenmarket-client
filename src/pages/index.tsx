@@ -2,7 +2,6 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 
 import { Home } from '~/components/templates/Home';
-import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 import { Head, HeadProps } from '~/components/atoms/Head';
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
@@ -22,9 +21,7 @@ const HomePage = ({ head }) => {
         <div>
             <Head {...head} />
 
-            <TheNavBarContainerWithState>
-                <Home />
-            </TheNavBarContainerWithState>
+            <Home />
         </div>
     );
 };

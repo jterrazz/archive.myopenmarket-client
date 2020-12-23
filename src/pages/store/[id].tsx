@@ -2,7 +2,6 @@ import React from 'react';
 import { GetServerSideProps, GetStaticProps } from 'next';
 
 import Shop from '../../components/templates/ShopOverview';
-import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 import { Head, HeadProps } from '~/components/atoms/Head';
 
 const _getProducts = async (tag) => {
@@ -33,11 +32,11 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 };
 
 const ShopPage = ({ head, shop }) => (
-    <TheNavBarContainerWithState>
+    <div>
         <Head {...head} />
         {JSON.stringify(shop)}
         {/*<Shop {...shop} getProducts={_getProducts} />*/}
-    </TheNavBarContainerWithState>
+    </div>
 );
 
 export default ShopPage;
