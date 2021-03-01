@@ -1,6 +1,5 @@
 {
- "name": "Open Market",
- "display": "standalone",
+ "name": "App",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
