@@ -2,6 +2,7 @@ require('dotenv').config(); // loads environment variables from a .env file
 const config = require('config'); // gets data from the root config folder https://github.com/lorenwest/node-config/wiki
 const Joi = require('joi');
 const packageJson = require('./package.json');
+const { i18n } = require('./next-i18next.config');
 
 const _buildAndVerifyConfigFromYml = (ymlSection, joiSchema) => {
     const configFromYml = config.get(ymlSection);
@@ -47,4 +48,5 @@ module.exports = {
         version: packageJson.version,
         app: appConfig,
     },
+  i18n
 };

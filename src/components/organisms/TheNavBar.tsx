@@ -2,7 +2,7 @@ import React, { ReactChild } from 'react';
 import Link from 'next/link';
 import getConfig from 'next/config';
 import { TFunction } from 'next-i18next';
-import { withTranslation } from '~/services/i18n';
+import { useTranslation } from 'next-i18next'
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -126,7 +126,8 @@ export const TheNavBarComponent: React.FC<TheNavBarProps> = ({ style, className,
 };
 
 // @ts-ignore
-export const TheNavBar = withTranslation('navigation')(TheNavBarComponent);
+// export const TheNavBar = useTranslation('navigation')(TheNavBarComponent);
+export const TheNavBar = TheNavBarComponent;
 
 export const TheNavBarContainer: React.FC<TheNavBarProps> = ({ children, user }) => {
     const NAVBAR_WIDTH = 270;
@@ -154,5 +155,6 @@ export const TheNavBarContainerWithState = ({ children }) => {
         name: 'Jean-Baptiste',
     };
 
-    return <TheNavBarContainer user={authenticatedUser}>{children}</TheNavBarContainer>;
-};
+  return <div>{children}</div>
+    // return <TheNavBarContainer user={authenticatedUser}>{children}</TheNavBarContainer>;
+};// TODO Fix that

@@ -7,7 +7,7 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
 import '~/styles/global.scss';
-import { appWithTranslation } from '~/services/i18n';
+import { appWithTranslation } from 'next-i18next'
 import { NotificationBar } from '~/components/molecules/NotificationBar';
 import { TheNavBarContainerWithState } from '~/components/organisms/TheNavBar';
 
