@@ -8,7 +8,10 @@
     "start": "next start",
     "build": "next build",
     "build:storybook": "build-storybook",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod"
   },
   "husky": {
     "hooks": {
