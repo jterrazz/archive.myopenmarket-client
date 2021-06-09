@@ -1,9 +1,0 @@
-<svg width="96" height="96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
-<path fill="#1e1e1e" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" undefined="1"></path>
-<path fill="#1e1e1e" d="M13.41 13.41L7 17L10.59 10.59L17 7L13.41 13.41Z" undefined="1"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="white" d="M13.41 13.41L7 17L10.59 10.59L17 7L13.41 13.41Z"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="white" d="M11.99 5H12.01"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="white" d="M11.99 19H12.01"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="white" d="M19 11.99V12.01"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="white" d="M5 11.99V12.01"></path>
-</svg>

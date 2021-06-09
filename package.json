@@ -1,72 +1,36 @@
 {
-  "name": "openmarket",
+  "name": "client-website",
   "version": "1.0.0",
+  "description": "Website client for the MyOpenMarket project",
+  "main": "index.js",
+  "repository": "git@github.com:myopenmarket/client-website.git",
+  "author": "Jean-Baptiste Terrazzoni <jterrazz@icloud.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev": "next dev -p 8080",
+    "start:dev": "next dev -p 8080 src",
     "start:storybook": "start-storybook -p 8081",
-    "start": "next start",
-    "build": "next build",
+    "start": "next start src",
+    "build": "next build src",
     "build:storybook": "build-storybook",
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix"
-    ]
-  },
   "dependencies": {
-    "@walletconnect/web3-provider": "^1.4.1",
-    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.1",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^5.0.1",
     "config": "^3.3.6",
-    "dotenv": "^8.2.0",
-    "joi": "^17.2.1",
-    "lodash": "^4.17.20",
-    "next": "^10.1.3",
-    "next-i18next": "^8.1.3",
-    "node-sass": "^5.0.0",
-    "nprogress": "^0.2.0",
-    "prop-types": "^15.7.2",
+    "lodash": "^4.17.21",
+    "next": "10.2.3",
+    "node-sass": "^6.0.0",
     "react": "17.0.2",
-    "react-content-loader": "^6.0.3",
     "react-dom": "17.0.2",
-    "sb": "^6.2.8",
-    "web3": "^1.3.5",
-    "web3modal": "^1.9.2"
+    "sb": "^6.2.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
-    "@storybook/addon-actions": "^6.2.8",
-    "@storybook/addon-essentials": "^6.2.8",
-    "@storybook/addon-links": "^6.2.8",
-    "@storybook/react": "^6.2.8",
-    "@types/node": "^14.14.41",
-    "@types/prop-types": "^15.7.3",
-    "@types/react": "^17.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "babel-loader": "^8.1.0",
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.2.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.23.2",
-    "heroku": "^7.52.0",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2",
-    "react-is": "^17.0.2",
-    "sass-lint": "^1.13.1",
-    "tsconfig-paths-webpack-plugin": "^3.5.1",
-    "typescript": "^4.2.4",
-    "vercel": "^22.0.1"
+    "@types/react": "^17.0.11",
+    "typescript": "^4.3.2"
   }
 }
