@@ -67,7 +67,7 @@ const App: React.FC<ApplicationProps> = ({ Component, pageProps }) => {
             />
             <CrispWithNoSSR />
             <div className='bg-white vh-100 vw-100 d-flex flex-column'>
-                {environmentMessages && <NotificationBar message={environmentMessages} />}
+                {/*{environmentMessages && <NotificationBar message={environmentMessages} />}*/}
                 <div className='flex-fill position-relative'>
                     <TheNavBarContainerWithState>
                         <Component {...pageProps} />
